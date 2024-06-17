@@ -1,0 +1,9 @@
+- id: PerformerDetailsExtended
+  name: Performer Details Extended
+  metadata:
+    description: Displays metadata about frequent scene partners, most prominent tags, etc. in your library, on performer pages.
+  version: 0.1.0-
+  date: 
+  path: PerformerDetailsExtended.zip
+  sha256: 
+

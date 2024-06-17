@@ -1,0 +1,18 @@
+name: Performer Details Extended
+description: Displays metadata about frequent scene partners, most prominent tags, etc. in your library, on performer pages.
+url: https://github.com/Valkyr-JS/plugin-performer-library-meta
+version: 0.1.0
+ui:
+  javascript:
+    - PerformerDetailsExtended.js
+  css:
+    - PerformerDetailsExtended.css
+settings:
+  mostCommonTagsCount:
+    displayName: Number of Common Tags
+    description: The number of tags to show under "Most Common Tags". Default is 3.
+    type: NUMBER
+  mostWorkedWithGendered:
+    displayName: '"Most Worked With" by gender'
+    description: Show a "Most Worked With" metadata item for each gender that the performer has worked with. If false, only one item showing the most worked with performer overall will be displayed.
+    type: BOOLEAN
