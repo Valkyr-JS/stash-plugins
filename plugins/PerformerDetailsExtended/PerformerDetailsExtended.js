@@ -245,9 +245,13 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 var DetailItem_1 = __importDefault(__webpack_require__(645));
 var React = window.PluginApi.React;
 var ItemAverageRating = function (props) {
+    var _a;
     // Get the user's rating system
-    var ratingSystem = props.configurationQueryResult.ui
-        .ratingSystemOptions;
+    var defaultRatingSystem = {
+        type: "stars",
+        starPrecision: "full",
+    };
+    var ratingSystem = ((_a = props.configurationQueryResult.ui) === null || _a === void 0 ? void 0 : _a.ratingSystemOptions) || defaultRatingSystem;
     // Get the rating for each scene
     var scenes = props.scenesQueryResult.scenes;
     var sceneRatings = scenes
