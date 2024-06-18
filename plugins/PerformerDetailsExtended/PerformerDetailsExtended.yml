@@ -1,6 +1,6 @@
 name: Performer Details Extended
 description: Displays metadata about frequent scene partners, most prominent tags, etc. in your library, on performer pages.
-url: https://github.com/Valkyr-JS/plugin-performer-library-meta
+url: https://github.com/Valkyr-JS/performer-details-extended
 version: 0.1.0
 ui:
   javascript:
@@ -12,7 +12,19 @@ settings:
     displayName: Number of Common Tags
     description: The number of tags to show under "Most Common Tags". Default is 3.
     type: NUMBER
+  mostCommonTagsOn:
+    displayName: Show "Most Common Tags" item
+    description: Toggle displaying the "Most Common Tags" item on or off. Default is on.
+    type: BOOLEAN
+  mostFeaturedNetworkOn:
+    displayName: Show "Most Featured On (Network)" item
+    description: Toggle displaying the "Most Featured On (Network)" item on or off. Default is on.
+    type: BOOLEAN
   mostWorkedWithGendered:
     displayName: '"Most Worked With" by gender'
     description: Show a "Most Worked With" metadata item for each gender that the performer has worked with. If false, only one item showing the most worked with performer overall will be displayed.
+    type: BOOLEAN
+  showWhenCollapsed:
+    displayName: Show when collapsed
+    description: When enabled, the plugin data will always be displayed, irrelevant of whether the performer details panel is collapsed or not. If disabled, it will follow the same settings as Interface > Detail Page > Show all details.
     type: BOOLEAN

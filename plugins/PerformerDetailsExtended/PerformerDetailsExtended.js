@@ -11,80 +11,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 555:
-/***/ ((__unused_webpack_module, exports) => {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.getGenderFromEnum = exports.createFilesize = exports.createDuration = void 0;
-/** Converts the given seconds into a uniform string showing an amount of time.
- * */
-var createDuration = function (seconds) {
-    var inMinutes = Math.floor(seconds / 60);
-    var inHours = Math.floor(inMinutes / 60);
-    var inDays = Math.floor(inHours / 24);
-    var output = "";
-    var totalHours = inHours % 60;
-    var totalMinutes = inMinutes % 60;
-    var totalSeconds = seconds % 60;
-    if (inDays > 0)
-        output += inDays + " days ";
-    if (!!totalHours || !!output.length)
-        output += totalHours + "h ";
-    if (!!totalMinutes || !!output.length)
-        output += totalMinutes + "m ";
-    // Round down to match native
-    output += Math.floor(totalSeconds) + "s ";
-    return output;
-};
-exports.createDuration = createDuration;
-/** Converts the given bytes into a uniform string showing a filesize, from
- * bytes to terabytes. */
-var createFilesize = function (bytes) {
-    var b = roundToTwo(bytes);
-    var kb = roundToTwo(bytes / 1024);
-    if (kb < 1)
-        return b + "B";
-    var mb = roundToTwo(kb / 1024);
-    if (mb < 1)
-        return kb + "KB";
-    var gb = roundToTwo(mb / 1024);
-    if (gb < 1)
-        return mb + "MB";
-    var tb = roundToTwo(gb / 1024);
-    if (tb < 1)
-        return gb + "GB";
-    return tb + "TB";
-};
-exports.createFilesize = createFilesize;
-/** Returns the associated string GenderEnum as a human-readable value. */
-var getGenderFromEnum = function (gender) {
-    switch (gender) {
-        case "MALE":
-            return "Male";
-        case "FEMALE":
-            return "Female";
-        case "TRANSGENDER_MALE":
-            return "Transgender male";
-        case "TRANSGENDER_FEMALE":
-            return "Transgender female";
-        case "INTERSEX":
-            return "Intersex";
-        case "NON_BINARY":
-            return "Non-binary";
-    }
-    return null;
-};
-exports.getGenderFromEnum = getGenderFromEnum;
-/** Round the provided number to two decimal places. */
-var roundToTwo = function (number) {
-    return Math.round((number + Number.EPSILON) * 100) / 100;
-};
-
-
-/***/ }),
-
 /***/ 333:
 /***/ ((__unused_webpack_module, exports) => {
 
@@ -164,75 +90,6 @@ exports["default"] = DetailItem;
 
 /***/ }),
 
-/***/ 282:
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
-
-"use strict";
-
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
-        }
-    return t;
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-var DetailItem_1 = __importDefault(__webpack_require__(645));
-var TagItem_1 = __importDefault(__webpack_require__(718));
-var React = window.PluginApi.React;
-var ItemMostCommonTags = function (_a) {
-    var performer = _a.performer, props = __rest(_a, ["performer"]);
-    var tagCount = props.userConfig.mostCommonTagsCount;
-    // Create an array of tag data from all scenes
-    var tags = [];
-    // Check each scene
-    props.scenesQueryResult.scenes.forEach(function (sc) {
-        // Check each tag in the scene
-        sc.tags.forEach(function (tag) {
-            // Check if the tag already exists in the array
-            var tagIndex = tags.findIndex(function (t) { return t.data.id === tag.id; });
-            if (tagIndex !== -1) {
-                // Increase the tag count
-                tags[tagIndex].count++;
-            }
-            else {
-                // Add the tag to the array
-                tags.push({
-                    count: 1,
-                    data: tag,
-                });
-            }
-        });
-    });
-    // Sort count from highest to lowest
-    tags.sort(function (a, b) { return b.count - a.count; });
-    // Return null if there are no tags
-    if (!tags.length)
-        return null;
-    // Return the tags with the highest overall count, up to the tagCount
-    var maxTags = tags.length < tagCount ? tags.length : tagCount;
-    var value = [];
-    for (var i = 0; i < maxTags; i++) {
-        var tagCount_1 = tags[i].count;
-        var tagData = tags[i].data;
-        var link = "/scenes?c=(\"type\":\"performers\",\"value\":(\"items\":%5B(\"id\":\"".concat(performer.id, "\",\"label\":\"").concat(encodeURIComponent(performer.name), "\")%5D,\"excluded\":%5B%5D),\"modifier\":\"INCLUDES\")&c=(\"type\":\"tags\",\"value\":(\"items\":%5B(\"id\":\"").concat(tagData.id, "\",\"label\":\"").concat(encodeURIComponent(tagData.name), "\")%5D,\"excluded\":%5B%5D,\"depth\":0),\"modifier\":\"INCLUDES\")");
-        value.push(React.createElement(TagItem_1.default, { link: link, title: "".concat(tagData.name, " (").concat(tagCount_1, " ").concat(tagCount_1 === 1 ? "scene" : "scenes", ")") }));
-    }
-    var title = "Most Common Tag" + (tagCount === 1 ? "" : "s");
-    return (React.createElement(DetailItem_1.default, { collapsed: props.collapsed, id: "most-common-tags", title: title, value: value, wide: true }));
-};
-exports["default"] = ItemMostCommonTags;
-
-
-/***/ }),
-
 /***/ 138:
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
@@ -277,6 +134,78 @@ exports["default"] = ItemAverageRating;
 
 /***/ }),
 
+/***/ 790:
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+"use strict";
+
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+var DetailItem_1 = __importDefault(__webpack_require__(645));
+var TagItem_1 = __importDefault(__webpack_require__(718));
+var React = window.PluginApi.React;
+var ItemMostCommonTags = function (_a) {
+    var performer = _a.performer, props = __rest(_a, ["performer"]);
+    var _b = props.pluginConfig, mostCommonTagsCount = _b.mostCommonTagsCount, mostCommonTagsOn = _b.mostCommonTagsOn;
+    // Do not render the item if the user has turned it off in the config.
+    if (!mostCommonTagsOn)
+        return null;
+    // Create an array of tag data from all scenes
+    var tags = [];
+    // Check each scene
+    props.scenesQueryResult.scenes.forEach(function (sc) {
+        // Check each tag in the scene
+        sc.tags.forEach(function (tag) {
+            // Check if the tag already exists in the array
+            var tagIndex = tags.findIndex(function (t) { return t.data.id === tag.id; });
+            if (tagIndex !== -1) {
+                // Increase the tag count
+                tags[tagIndex].count++;
+            }
+            else {
+                // Add the tag to the array
+                tags.push({
+                    count: 1,
+                    data: tag,
+                });
+            }
+        });
+    });
+    // Sort count from highest to lowest
+    tags.sort(function (a, b) { return b.count - a.count; });
+    // Return null if there are no tags
+    if (!tags.length)
+        return null;
+    // Return the tags with the highest overall count, up to the tagCount
+    var maxTags = tags.length < mostCommonTagsCount ? tags.length : mostCommonTagsCount;
+    var value = [];
+    for (var i = 0; i < maxTags; i++) {
+        var tagCount = tags[i].count;
+        var tagData = tags[i].data;
+        var link = "/scenes?c=(\"type\":\"performers\",\"value\":(\"items\":%5B(\"id\":\"".concat(performer.id, "\",\"label\":\"").concat(encodeURIComponent(performer.name), "\")%5D,\"excluded\":%5B%5D),\"modifier\":\"INCLUDES\")&c=(\"type\":\"tags\",\"value\":(\"items\":%5B(\"id\":\"").concat(tagData.id, "\",\"label\":\"").concat(encodeURIComponent(tagData.name), "\")%5D,\"excluded\":%5B%5D,\"depth\":0),\"modifier\":\"INCLUDES\")");
+        value.push(React.createElement(TagItem_1.default, { link: link, title: "".concat(tagData.name, " (").concat(tagCount, " ").concat(tagCount === 1 ? "scene" : "scenes", ")") }));
+    }
+    var title = "Most Common Tag" + (mostCommonTagsCount === 1 ? "" : "s");
+    return (React.createElement(DetailItem_1.default, { collapsed: props.collapsed, id: "most-common-tags", title: title, value: value, wide: true }));
+};
+exports["default"] = ItemMostCommonTags;
+
+
+/***/ }),
+
 /***/ 92:
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
@@ -286,7 +215,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-var helpers_1 = __webpack_require__(555);
+var helpers_1 = __webpack_require__(730);
 var DetailItem_1 = __importDefault(__webpack_require__(645));
 var React = window.PluginApi.React;
 var ItemContentSize = function (props) {
@@ -306,46 +235,111 @@ exports["default"] = ItemContentSize;
 
 "use strict";
 
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 var DetailItem_1 = __importDefault(__webpack_require__(645));
 var React = window.PluginApi.React;
-var ItemFrequentStudio = function (_a) {
-    var collapsed = _a.collapsed, performer = _a.performer, scenesQueryResult = _a.scenesQueryResult;
-    // Create an array of studio data from all scenes
-    var studios = [];
-    var scenes = scenesQueryResult.scenes;
+var ItemMostFeaturedOn = function (_a) {
+    var performer = _a.performer, props = __rest(_a, ["performer"]);
+    var mostFeaturedNetworkOn = props.pluginConfig.mostFeaturedNetworkOn;
+    var scenes = props.scenesQueryResult.scenes;
     if (scenes.length === 0)
         return null;
+    /* ------------------------------- Studio data ------------------------------ */
+    // Create an array of studio data from all scenes
+    var studios = [];
     // Check each scene
-    scenesQueryResult.scenes.forEach(function (sc) {
-        // Check if the scene studio already exists in the array
-        var studiosIndex = studios.findIndex(function (st) { var _a; return st.id === ((_a = sc.studio) === null || _a === void 0 ? void 0 : _a.id); });
-        // If there is not studio attached to the scene, skip the scene.
+    scenes.forEach(function (sc) {
+        // If there is no studio attached to the scene, skip the scene.
         if (!sc.studio)
             return;
+        // Check if the scene studio already exists in the array
+        var studiosIndex = studios.findIndex(function (st) { var _a; return st.data.id === ((_a = sc.studio) === null || _a === void 0 ? void 0 : _a.id); });
         if (studiosIndex !== -1) {
             // Studio already appears the array. Increase its count.
             studios[studiosIndex].count++;
         }
         else {
             // Add the studio to the array
-            studios.push({ id: sc.studio.id, count: 1, name: sc.studio.name });
+            studios.push({ count: 1, data: sc.studio });
         }
     });
     // Sort count from highest to lowest number of scenes.
-    studios.sort(function (a, b) { return b.count - a.count; });
+    var sortHighToLow = function (a, b) { return b.count - a.count; };
+    studios.sort(sortHighToLow);
     var topStudio = studios[0];
     var additionalDataValue = topStudio.count + (topStudio.count === 1 ? " scene" : " scenes");
-    var linkToStudio = "/studios/".concat(topStudio.id, "/scenes?c=(\"type\":\"performers\",\"value\":(\"items\":%5B(\"id\":\"").concat(performer.id, "\",\"label\":\"").concat(encodeURIComponent(performer.name), "\")%5D,\"excluded\":%5B%5D),\"modifier\":\"INCLUDES\")");
-    return (React.createElement(DetailItem_1.default, { collapsed: collapsed, id: "most-featured-on", title: "Most Featured On", value: React.createElement("a", { href: linkToStudio }, topStudio.name), wide: true, additionalData: {
-            id: "featured-studio-scenes",
-            value: additionalDataValue,
-        } }));
+    var linkToStudio = "/studios/".concat(topStudio.data.id, "/scenes?c=(\"type\":\"performers\",\"value\":(\"items\":%5B(\"id\":\"").concat(performer.id, "\",\"label\":\"").concat(encodeURIComponent(performer.name), "\")%5D,\"excluded\":%5B%5D),\"modifier\":\"INCLUDES\")");
+    /* ------------------------------ Network data ------------------------------ */
+    var itemMostFeaturedNetwork = null;
+    if (mostFeaturedNetworkOn) {
+        // Create an array of network data from all scenes
+        var networks_1 = [];
+        // If the scene studio has a network, use it. Otherwise treat the studio as
+        // the network.
+        var getNetworkData_1 = function (studioID) {
+            if (typeof studioID === "undefined")
+                return undefined;
+            var studioData = props.allStudiosQueryResult.studios.find(function (st) { return st.id === studioID; });
+            return (studioData === null || studioData === void 0 ? void 0 : studioData.parent_studio) ? studioData.parent_studio : studioData;
+        };
+        // Check each scene
+        scenes.forEach(function (sc) {
+            var _a;
+            /**
+             * ! `findStudios` is currently bugged when trying to filter to return
+             * studios featuring scenes featuring performer. Once that's fixed, this
+             * can be streamlined to use that data.
+             */
+            var network = getNetworkData_1((_a = sc.studio) === null || _a === void 0 ? void 0 : _a.id);
+            // If network is undefined or null, skip
+            if (!network)
+                return;
+            // Check if the scene network already exists in the array
+            var networksIndex = networks_1.findIndex(function (nw) { return nw.data.id === network.id; });
+            if (networksIndex !== -1) {
+                // Network already appears the array. Increase its count.
+                networks_1[networksIndex].count++;
+            }
+            else {
+                // Add the network to the array
+                networks_1.push({ count: 1, data: network });
+            }
+        });
+        // Sort count from highest to lowest number of scenes.
+        networks_1.sort(sortHighToLow);
+        var topNetwork = networks_1[0];
+        var additionalNetworkDataValue = topNetwork.count + (topNetwork.count === 1 ? " scene" : " scenes");
+        var linkToNetwork = "/studios/".concat(topNetwork.data.id, "/scenes?c=(\"type\":\"performers\",\"value\":(\"items\":%5B(\"id\":\"").concat(performer.id, "\",\"label\":\"").concat(encodeURIComponent(performer.name), "\")%5D,\"excluded\":%5B%5D),\"modifier\":\"INCLUDES\")");
+        // Don't return the network unless it is different from the top studio.
+        if (topNetwork.data.id !== topStudio.data.id) {
+            itemMostFeaturedNetwork = (React.createElement(DetailItem_1.default, { collapsed: props.collapsed, id: "most-featured-network", title: "Most Featured On (Network)", value: React.createElement("a", { href: linkToNetwork }, topNetwork.data.name), wide: true, additionalData: {
+                    id: "featured-network-scenes",
+                    value: additionalNetworkDataValue,
+                } }));
+        }
+    }
+    return (React.createElement(React.Fragment, null,
+        React.createElement(DetailItem_1.default, { collapsed: props.collapsed, id: "most-featured-on", title: "Most Featured On", value: React.createElement("a", { href: linkToStudio }, topStudio.data.name), wide: true, additionalData: {
+                id: "featured-studio-scenes",
+                value: additionalDataValue,
+            } }),
+        itemMostFeaturedNetwork));
 };
-exports["default"] = ItemFrequentStudio;
+exports["default"] = ItemMostFeaturedOn;
 
 
 /***/ }),
@@ -370,14 +364,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-var helpers_1 = __webpack_require__(555);
+var helpers_1 = __webpack_require__(730);
 var constants_1 = __webpack_require__(333);
 var DetailItem_1 = __importDefault(__webpack_require__(645));
 var React = window.PluginApi.React;
 var makePerformerScenesUrl = window.PluginApi.utils.NavUtils.makePerformerScenesUrl;
 var ItemMostWorkedWith = function (_a) {
     var performer = _a.performer, props = __rest(_a, ["performer"]);
-    var mostWorkedWithGendered = props.userConfig.mostWorkedWithGendered;
+    var mostWorkedWithGendered = props.pluginConfig.mostWorkedWithGendered;
     // Create an array of performer data from all scenes
     var partners = [];
     // Check each scene
@@ -558,7 +552,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-var helpers_1 = __webpack_require__(555);
+var helpers_1 = __webpack_require__(730);
 var DetailItem_1 = __importDefault(__webpack_require__(645));
 var React = window.PluginApi.React;
 /** "Scene Play Count" item component. */
@@ -604,30 +598,93 @@ exports["default"] = TagItem;
 
 /***/ }),
 
+/***/ 730:
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.getGenderFromEnum = exports.createFilesize = exports.createDuration = void 0;
+/** Converts the given seconds into a uniform string showing an amount of time.
+ * */
+var createDuration = function (seconds) {
+    var inMinutes = Math.floor(seconds / 60);
+    var inHours = Math.floor(inMinutes / 60);
+    var inDays = Math.floor(inHours / 24);
+    var output = "";
+    var totalHours = inHours % 60;
+    var totalMinutes = inMinutes % 60;
+    var totalSeconds = seconds % 60;
+    if (inDays > 0)
+        output += inDays + " days ";
+    if (!!totalHours || !!output.length)
+        output += totalHours + "h ";
+    if (!!totalMinutes || !!output.length)
+        output += totalMinutes + "m ";
+    // Round down to match native
+    output += Math.floor(totalSeconds) + "s ";
+    return output;
+};
+exports.createDuration = createDuration;
+/** Converts the given bytes into a uniform string showing a filesize, from
+ * bytes to terabytes. */
+var createFilesize = function (bytes) {
+    var b = roundToTwo(bytes);
+    var kb = roundToTwo(bytes / 1024);
+    if (kb < 1)
+        return b + "B";
+    var mb = roundToTwo(kb / 1024);
+    if (mb < 1)
+        return kb + "KB";
+    var gb = roundToTwo(mb / 1024);
+    if (gb < 1)
+        return mb + "MB";
+    var tb = roundToTwo(gb / 1024);
+    if (tb < 1)
+        return gb + "GB";
+    return tb + "TB";
+};
+exports.createFilesize = createFilesize;
+/** Returns the associated string GenderEnum as a human-readable value. */
+var getGenderFromEnum = function (gender) {
+    switch (gender) {
+        case "MALE":
+            return "Male";
+        case "FEMALE":
+            return "Female";
+        case "TRANSGENDER_MALE":
+            return "Transgender male";
+        case "TRANSGENDER_FEMALE":
+            return "Transgender female";
+        case "INTERSEX":
+            return "Intersex";
+        case "NON_BINARY":
+            return "Non-binary";
+    }
+    return null;
+};
+exports.getGenderFromEnum = getGenderFromEnum;
+/** Round the provided number to two decimal places. */
+var roundToTwo = function (number) {
+    return Math.round((number + Number.EPSILON) * 100) / 100;
+};
+
+
+/***/ }),
+
 /***/ 221:
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
 "use strict";
 
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 var DetailGroup_1 = __importDefault(__webpack_require__(687));
 var ItemAverageRating_1 = __importDefault(__webpack_require__(138));
-var Item_CommonTags_1 = __importDefault(__webpack_require__(282));
 var ItemContentSize_1 = __importDefault(__webpack_require__(92));
+var ItemCommonTags_1 = __importDefault(__webpack_require__(790));
 var ItemMostFeaturedOn_1 = __importDefault(__webpack_require__(682));
 var ItemMostWorkedWith_1 = __importDefault(__webpack_require__(231));
 var ItemOCount_1 = __importDefault(__webpack_require__(806));
@@ -637,20 +694,15 @@ var ItemWatchedFor_1 = __importDefault(__webpack_require__(197));
 __webpack_require__(680);
 var PluginApi = window.PluginApi;
 var GQL = PluginApi.GQL, React = PluginApi.React;
-var defaultConfig = {
-    mostCommonTagsCount: 3,
-    mostWorkedWithGendered: true,
-};
 /* -------------------------------------------------------------------------- */
 /*                               PluginApi patch                              */
 /* -------------------------------------------------------------------------- */
 PluginApi.patch.after("PerformerDetailsPanel.DetailGroup", function (_a) {
-    var _b;
     var children = _a.children, collapsed = _a.collapsed, performer = _a.performer;
     var performerID = performer.id;
     var qScenes = GQL.useFindScenesQuery({
         variables: {
-            filter: { per_page: -1, sort: "date" },
+            filter: { per_page: -1 },
             scene_filter: {
                 performers: {
                     modifier: "INCLUDES" /* CriterionModifier.Includes */,
@@ -659,37 +711,66 @@ PluginApi.patch.after("PerformerDetailsPanel.DetailGroup", function (_a) {
             },
         },
     });
+    var qAllStudios = GQL.useFindStudiosQuery({
+        variables: { filter: { sort: "id" } },
+    });
     var qConfig = GQL.useConfigurationQuery();
     var qStats = GQL.useStatsQuery();
-    // Only attach plugin component if scene data has been found. Otherwise,
-    // return the original component only.
-    if (!!qScenes.data &&
+    /**
+     * Only display the plugin data if:
+     * * The required data has been loaded.
+     * * AND The performer details section is NOT collapsed
+     * * UNLESS the user has set to override this behaviour.
+     */
+    var dataLoaded = !!qScenes.data &&
         qScenes.data.findScenes.scenes.length &&
         !!qConfig.data &&
         !!qStats.data &&
-        performerID !== null) {
-        var configurationQueryResult = qConfig.data.configuration;
+        !!qAllStudios.data &&
+        performerID !== null;
+    if (dataLoaded) {
+        var allStudiosQueryResult = qAllStudios.data.findStudios;
+        var configurationQueryResult = qConfig.data
+            .configuration;
         var scenesQueryResult = qScenes.data.findScenes;
         var statsQueryResult = qStats.data.stats;
-        var userConfig = __assign(__assign(__assign({}, defaultConfig), configurationQueryResult.plugins.PerformerDetailsExtended), { mostCommonTagsCount: ((_b = configurationQueryResult.plugins.PerformerDetailsExtended) === null || _b === void 0 ? void 0 : _b.mostCommonTagsCount) || defaultConfig.mostCommonTagsCount });
-        return [
-            React.createElement(React.Fragment, null,
-                React.createElement(DetailGroup_1.default, null, children),
-                React.createElement(DetailGroup_1.default, { id: "pde__entities", className: "performer-details-extended" },
-                    React.createElement(ItemAverageRating_1.default, { collapsed: collapsed, configurationQueryResult: configurationQueryResult, performer: performer, scenesQueryResult: scenesQueryResult }),
-                    React.createElement(ItemMostWorkedWith_1.default, { collapsed: collapsed, performer: performer, scenesQueryResult: scenesQueryResult, userConfig: userConfig }),
-                    React.createElement(ItemMostFeaturedOn_1.default, { collapsed: collapsed, performer: performer, scenesQueryResult: scenesQueryResult }),
-                    React.createElement(Item_CommonTags_1.default, { collapsed: collapsed, performer: performer, scenesQueryResult: scenesQueryResult, userConfig: userConfig })),
-                React.createElement(DetailGroup_1.default, { id: "pde__numbers", className: "performer-details-extended" },
-                    React.createElement(ItemContentSize_1.default, { collapsed: collapsed, scenesQueryResult: scenesQueryResult }),
-                    React.createElement(ItemWatchedFor_1.default, { collapsed: collapsed, scenesQueryResult: scenesQueryResult }),
-                    React.createElement(ItemScenesTimespan_1.default, { collapsed: collapsed, scenesQueryResult: scenesQueryResult }),
-                    React.createElement(ItemScenesOrganized_1.default, { collapsed: collapsed, scenesQueryResult: scenesQueryResult }),
-                    React.createElement(ItemOCount_1.default, { collapsed: collapsed, scenesQueryResult: scenesQueryResult, statsQueryResult: statsQueryResult }))),
-        ];
+        var showAllDetails = configurationQueryResult.ui.showAllDetails;
+        var userConfig = configurationQueryResult.plugins.PerformerDetailsExtended;
+        // Compile the user's config with config defaults
+        var pluginConfig = {
+            // For mostCommonTagsCount, set to 3 if the value is undefined or 0.
+            mostCommonTagsCount: (userConfig === null || userConfig === void 0 ? void 0 : userConfig.mostCommonTagsCount) || 3,
+            mostCommonTagsOn: getConfigProp(userConfig === null || userConfig === void 0 ? void 0 : userConfig.mostCommonTagsOn, true),
+            mostFeaturedNetworkOn: getConfigProp(userConfig === null || userConfig === void 0 ? void 0 : userConfig.mostFeaturedNetworkOn, true),
+            mostWorkedWithGendered: getConfigProp(userConfig === null || userConfig === void 0 ? void 0 : userConfig.mostCommonTagsOn, true),
+            showWhenCollapsed: getConfigProp(userConfig === null || userConfig === void 0 ? void 0 : userConfig.showWhenCollapsed, showAllDetails || false),
+        };
+        var showDetails = !collapsed || pluginConfig.showWhenCollapsed;
+        if (showDetails) {
+            return [
+                React.createElement(React.Fragment, null,
+                    React.createElement(DetailGroup_1.default, null, children),
+                    React.createElement(DetailGroup_1.default, { id: "pde__entities", className: "performer-details-extended" },
+                        React.createElement(ItemAverageRating_1.default, { collapsed: collapsed, configurationQueryResult: configurationQueryResult, performer: performer, scenesQueryResult: scenesQueryResult }),
+                        React.createElement(ItemMostWorkedWith_1.default, { collapsed: collapsed, performer: performer, pluginConfig: pluginConfig, scenesQueryResult: scenesQueryResult }),
+                        React.createElement(ItemMostFeaturedOn_1.default, { allStudiosQueryResult: allStudiosQueryResult, collapsed: collapsed, performer: performer, pluginConfig: pluginConfig, scenesQueryResult: scenesQueryResult }),
+                        React.createElement(ItemCommonTags_1.default, { collapsed: collapsed, performer: performer, pluginConfig: pluginConfig, scenesQueryResult: scenesQueryResult })),
+                    React.createElement(DetailGroup_1.default, { id: "pde__numbers", className: "performer-details-extended" },
+                        React.createElement(ItemContentSize_1.default, { collapsed: collapsed, scenesQueryResult: scenesQueryResult }),
+                        React.createElement(ItemWatchedFor_1.default, { collapsed: collapsed, scenesQueryResult: scenesQueryResult }),
+                        React.createElement(ItemScenesTimespan_1.default, { collapsed: collapsed, scenesQueryResult: scenesQueryResult }),
+                        React.createElement(ItemScenesOrganized_1.default, { collapsed: collapsed, scenesQueryResult: scenesQueryResult }),
+                        React.createElement(ItemOCount_1.default, { collapsed: collapsed, scenesQueryResult: scenesQueryResult, statsQueryResult: statsQueryResult }))),
+            ];
+        }
     }
     return [React.createElement("div", { className: "detail-group" }, children)];
 });
+/** Returns the given property from the user's config, or the default value if
+ * the user hasn't explicitly set it. */
+function getConfigProp(value, defaultValue) {
+    return typeof value !== "undefined" ? value : defaultValue;
+}
 
 
 /***/ }),
