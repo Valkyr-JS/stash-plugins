@@ -319,17 +319,19 @@ var ItemMostFeaturedOn = function (_a) {
                 networks_1.push({ count: 1, data: network });
             }
         });
-        // Sort count from highest to lowest number of scenes.
-        networks_1.sort(sortHighToLow);
-        var topNetwork = networks_1[0];
-        var additionalNetworkDataValue = topNetwork.count + (topNetwork.count === 1 ? " scene" : " scenes");
-        var linkToNetwork = "/studios/".concat(topNetwork.data.id, "/scenes?c=(\"type\":\"performers\",\"value\":(\"items\":%5B(\"id\":\"").concat(performer.id, "\",\"label\":\"").concat(encodeURIComponent(performer.name), "\")%5D,\"excluded\":%5B%5D),\"modifier\":\"INCLUDES\")");
-        // Don't return the network unless it is different from the top studio.
-        if (topNetwork.data.id !== topStudio.data.id) {
-            itemMostFeaturedNetwork = (React.createElement(DetailItem_1.default, { collapsed: props.collapsed, id: "most-featured-network", title: "Most Featured On (Network)", value: React.createElement("a", { href: linkToNetwork }, topNetwork.data.name), wide: true, additionalData: {
-                    id: "featured-network-scenes",
-                    value: additionalNetworkDataValue,
-                } }));
+        if (networks_1.length > 0) {
+            // Sort count from highest to lowest number of scenes.
+            networks_1.sort(sortHighToLow);
+            var topNetwork = networks_1[0];
+            var additionalNetworkDataValue = topNetwork.count + (topNetwork.count === 1 ? " scene" : " scenes");
+            var linkToNetwork = "/studios/".concat(topNetwork.data.id, "/scenes?c=(\"type\":\"performers\",\"value\":(\"items\":%5B(\"id\":\"").concat(performer.id, "\",\"label\":\"").concat(encodeURIComponent(performer.name), "\")%5D,\"excluded\":%5B%5D),\"modifier\":\"INCLUDES\")");
+            // Don't return the network unless it is different from the top studio.
+            if (topNetwork.data.id !== topStudio.data.id) {
+                itemMostFeaturedNetwork = (React.createElement(DetailItem_1.default, { collapsed: props.collapsed, id: "most-featured-network", title: "Most Featured On (Network)", value: React.createElement("a", { href: linkToNetwork }, topNetwork.data.name), wide: true, additionalData: {
+                        id: "featured-network-scenes",
+                        value: additionalNetworkDataValue,
+                    } }));
+            }
         }
     }
     return (React.createElement(React.Fragment, null,
@@ -712,7 +714,7 @@ PluginApi.patch.after("PerformerDetailsPanel.DetailGroup", function (_a) {
         },
     });
     var qAllStudios = GQL.useFindStudiosQuery({
-        variables: { filter: { sort: "id" } },
+        variables: { filter: { per_page: -1, sort: "id" } },
     });
     var qConfig = GQL.useConfigurationQuery();
     var qStats = GQL.useStatsQuery();
