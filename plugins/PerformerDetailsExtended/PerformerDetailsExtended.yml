@@ -1,30 +1,38 @@
 name: Performer Details Extended
 description: Displays metadata about frequent scene partners, most prominent tags, etc. in your library, on performer pages.
 url: https://github.com/Valkyr-JS/performer-details-extended
-version: 0.2.1
+version: 0.3.0
 ui:
   javascript:
     - PerformerDetailsExtended.js
   css:
     - PerformerDetailsExtended.css
 settings:
-  mostCommonTagsCount:
-    displayName: Number of Common Tags
-    description: The number of tags to show under "Most Common Tags". Default is 3.
+  appearsMostWithGendered:
+    displayName: '"Appears Most With" by gender'
+    description: Show an "Appears Most With" metadata item for each gender that the performer has worked with. If false, only one item showing the performer they work with most overall will be displayed.
+    type: BOOLEAN
+  maximumTops:
+    displayName: Top appearances before overflow listed
+    description: The maximum number of results that are displayed as a performer's top studios/networks/partners before they overflow to a hover popover. The default value is 3.
     type: NUMBER
-  mostCommonTagsOn:
-    displayName: Show "Most Common Tags" item
-    description: Toggle displaying the "Most Common Tags" item on or off. Default is on.
-    type: BOOLEAN
-  mostFeaturedNetworkOn:
-    displayName: Show "Most Featured On (Network)" item
-    description: Toggle displaying the "Most Featured On (Network)" item on or off. Default is on.
-    type: BOOLEAN
-  mostWorkedWithGendered:
-    displayName: '"Most Worked With" by gender'
-    description: Show a "Most Worked With" metadata item for each gender that the performer has worked with. If false, only one item showing the most worked with performer overall will be displayed.
-    type: BOOLEAN
+  minimumAppearances:
+    displayName: Minimum appearances required
+    description: The minimum number of appearances a performer needs to have had with a partner/studio/network in order to show the data. The default value is 2.
+    type: NUMBER
   showWhenCollapsed:
     displayName: Show when collapsed
     description: When enabled, the plugin data will always be displayed, irrelevant of whether the performer details panel is collapsed or not. If disabled, it will follow the same settings as Interface > Detail Page > Show all details.
+    type: BOOLEAN
+  topNetworkOn:
+    displayName: Show "Top Network" item
+    description: Toggle displaying the "Top Network" item on or off. Default is on.
+    type: BOOLEAN
+  topTagsCount:
+    displayName: Number of top tags
+    description: The number of tags to show under "Top Tags". The default value is 3.
+    type: NUMBER
+  topTagsOn:
+    displayName: Show "Top Tags" item
+    description: When enabled, the "Top Tags" item will be displayed. Default is on.
     type: BOOLEAN
