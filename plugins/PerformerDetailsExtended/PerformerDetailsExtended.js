@@ -1,995 +1,208 @@
+/*
+ * ATTENTION: The "eval" devtool has been used (maybe by default in mode: "development").
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 680:
+/***/ "./src/styles.scss":
+/*!*************************!*\
+  !*** ./src/styles.scss ***!
+  \*************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://performer-details-extended/./src/styles.scss?");
 
 /***/ }),
 
-/***/ 333:
+/***/ "./src/common/constants.ts":
+/*!*********************************!*\
+  !*** ./src/common/constants.ts ***!
+  \*********************************/
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.GENDERS = void 0;
-/** `enum GenderEnum` as an array. */
-exports.GENDERS = [
-    "MALE",
-    "FEMALE",
-    "TRANSGENDER_MALE",
-    "TRANSGENDER_FEMALE",
-    "INTERSEX",
-    "NON_BINARY",
-];
-
+eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.GENDERS = void 0;\n/** `enum GenderEnum` as an array. */\nexports.GENDERS = [\n    \"MALE\",\n    \"FEMALE\",\n    \"TRANSGENDER_MALE\",\n    \"TRANSGENDER_FEMALE\",\n    \"INTERSEX\",\n    \"NON_BINARY\",\n];\n\n\n//# sourceURL=webpack://performer-details-extended/./src/common/constants.ts?");
 
 /***/ }),
 
-/***/ 687:
+/***/ "./src/components/DetailGroup.tsx":
+/*!****************************************!*\
+  !*** ./src/components/DetailGroup.tsx ***!
+  \****************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
 "use strict";
-
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-var classnames_1 = __importDefault(__webpack_require__(942));
-var React = window.PluginApi.React;
-/** The detail group row. Identical to the native component, with an optional
- * ID. */
-var DetailGroup = function (props) {
-    return (React.createElement("div", { id: props.id, className: (0, classnames_1.default)("detail-group", props.className), children: props.children }));
-};
-exports["default"] = DetailGroup;
-
+eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar classnames_1 = __importDefault(__webpack_require__(/*! classnames */ \"./node_modules/classnames/index.js\"));\nvar React = window.PluginApi.React;\n/** The detail group row. Identical to the native component, with an optional\n * ID. */\nvar DetailGroup = function (props) {\n    return (React.createElement(\"div\", { id: props.id, className: (0, classnames_1.default)(\"detail-group\", props.className), children: props.children }));\n};\nexports[\"default\"] = DetailGroup;\n\n\n//# sourceURL=webpack://performer-details-extended/./src/components/DetailGroup.tsx?");
 
 /***/ }),
 
-/***/ 645:
+/***/ "./src/components/DetailItem.tsx":
+/*!***************************************!*\
+  !*** ./src/components/DetailItem.tsx ***!
+  \***************************************/
 /***/ (function(__unused_webpack_module, exports) {
 
 "use strict";
-
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
-        }
-    return t;
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-var React = window.PluginApi.React;
-/** Initialises and returns the DetailItem component by passing React as an
- * argument. */
-var DetailItem = function (_a) {
-    var additionalData = _a.additionalData, id = _a.id, title = _a.title, props = __rest(_a, ["additionalData", "id", "title"]);
-    var titleText = !props.collapsed ? title + ":" : title;
-    var classes = ["detail-item", id];
-    if (props.wide)
-        classes.push("detail-item-wide");
-    return (React.createElement("div", { className: classes.join(" ") },
-        React.createElement("span", { className: "detail-item-title " + id }, titleText),
-        React.createElement("span", { className: "detail-item-value " + id },
-            React.createElement("span", { className: "performer-" + id },
-                props.value,
-                additionalData ? (React.createElement("span", { className: "additional-data performer-" + additionalData.id }, additionalData.value)) : null))));
-};
-exports["default"] = DetailItem;
-
+eval("\nvar __rest = (this && this.__rest) || function (s, e) {\n    var t = {};\n    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)\n        t[p] = s[p];\n    if (s != null && typeof Object.getOwnPropertySymbols === \"function\")\n        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {\n            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))\n                t[p[i]] = s[p[i]];\n        }\n    return t;\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar React = window.PluginApi.React;\n/** Initialises and returns the DetailItem component by passing React as an\n * argument. */\nvar DetailItem = function (_a) {\n    var additionalData = _a.additionalData, id = _a.id, title = _a.title, props = __rest(_a, [\"additionalData\", \"id\", \"title\"]);\n    var colon = !props.collapsed ? \":\" : null;\n    var classes = [\"detail-item\", id];\n    if (props.wide)\n        classes.push(\"detail-item-wide\");\n    return (React.createElement(\"div\", { className: classes.join(\" \") },\n        React.createElement(\"span\", { className: \"detail-item-title \" + id },\n            title,\n            colon),\n        React.createElement(\"span\", { className: \"detail-item-value \" + id, \"data-value\": props.dataValue },\n            React.createElement(\"span\", { className: \"performer-\" + id },\n                props.value,\n                additionalData ? (React.createElement(\"span\", { className: \"additional-data performer-\" + additionalData.id, \"data-value\": additionalData.dataValue }, additionalData.value)) : null))));\n};\nexports[\"default\"] = DetailItem;\n\n\n//# sourceURL=webpack://performer-details-extended/./src/components/DetailItem.tsx?");
 
 /***/ }),
 
-/***/ 327:
+/***/ "./src/components/ItemAppearsMostWith.tsx":
+/*!************************************************!*\
+  !*** ./src/components/ItemAppearsMostWith.tsx ***!
+  \************************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
 "use strict";
-
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
-        }
-    return t;
-};
-var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
-    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
-        if (ar || !(i in from)) {
-            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
-            ar[i] = from[i];
-        }
-    }
-    return to.concat(ar || Array.prototype.slice.call(from));
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-var helpers_1 = __webpack_require__(730);
-var constants_1 = __webpack_require__(333);
-var DetailItem_1 = __importDefault(__webpack_require__(645));
-var React = window.PluginApi.React;
-var makePerformerScenesUrl = window.PluginApi.utils.NavUtils.makePerformerScenesUrl;
-var ItemAppearsMostWith = function (_a) {
-    var performer = _a.performer, props = __rest(_a, ["performer"]);
-    var _b = props.pluginConfig, appearsMostWithGendered = _b.appearsMostWithGendered, maximumTops = _b.maximumTops, minimumAppearances = _b.minimumAppearances;
-    // Create an array of performer data from all scenes
-    var partners = [];
-    // Check each scene
-    props.scenesQueryResult.scenes.forEach(function (sc) {
-        // Check each performer in the scene
-        sc.performers.forEach(function (pf) {
-            // Check this is not the featured performer
-            if (pf.id !== performer.id) {
-                // Check if the performer already exists in the array
-                var perfomersIndex = partners.findIndex(function (ptnr) { return ptnr.data.id === pf.id; });
-                if (perfomersIndex !== -1) {
-                    // Increase the performer count
-                    partners[perfomersIndex].count++;
-                }
-                else {
-                    // Add the performer to the array
-                    partners.push({
-                        count: 1,
-                        data: pf,
-                    });
-                }
-            }
-        });
-    });
-    // Sort count from highest to lowest
-    partners.sort(function (a, b) { return b.count - a.count; });
-    // If the top partner's count is less than the minimum required, don't return
-    // a component.
-    if (partners.length === 0 || partners[0].count < minimumAppearances)
-        return null;
-    if (appearsMostWithGendered) {
-        return constants_1.GENDERS.map(function (g) {
-            var genderedPartners = partners.filter(function (p) { return p.data.gender === g; });
-            // If there is no partner for the current gender or the top partner's
-            // count is less than the minimum required, don't return a component.
-            if (genderedPartners.length === 0 ||
-                genderedPartners[0].count < minimumAppearances)
-                return null;
-            var topPartners = genderedPartners
-                .filter(function (p) { return p.count === genderedPartners[0].count; })
-                .sort(function (a, b) { return a.data.name.localeCompare(b.data.name, "en"); });
-            var topPartnersData = topPartners.map(function (p) {
-                var scenesLink = makePerformerScenesUrl(performer, {
-                    id: p.data.id,
-                    label: p.data.name,
-                });
-                return { name: p.data.name, scenesLink: scenesLink };
-            });
-            var genderWord = " (" + (0, helpers_1.getGenderFromEnum)(g) + ")";
-            var id = genderWord.toLowerCase().split(" ").join("-");
-            var scenesText = topPartners[0].count +
-                " " +
-                (topPartners[0].count === 1 ? "scene" : "scenes");
-            var maxLinks = topPartners.length < maximumTops ? topPartners.length : maximumTops;
-            var links = [];
-            for (var i = 0; i < maxLinks; i++) {
-                links.push(React.createElement("a", { href: topPartnersData[i].scenesLink }, topPartnersData[i].name));
-                if (i !== maxLinks - 1)
-                    links.push(" / ");
-            }
-            if (topPartners.length > maxLinks) {
-                var names = topPartners.map(function (p) { return p.data.name; });
-                var title = (0, helpers_1.createOverflowText)(names, maxLinks);
-                links.push(React.createElement(React.Fragment, null,
-                    " ",
-                    React.createElement("span", { className: "top-meta-overflow hoverable", title: title },
-                        "and ",
-                        topPartners.length - maxLinks,
-                        " more")));
-            }
-            var value = React.createElement.apply(React, __spreadArray([React.Fragment, null], links, false));
-            return (React.createElement(DetailItem_1.default, { collapsed: props.collapsed, id: "appears-most-with-" + id, title: "Appears Most With " + genderWord, value: value, wide: true, additionalData: {
-                    id: "scene-count",
-                    value: scenesText,
-                } }));
-        });
-    }
-    var topPartner = partners[0];
-    // If the top partner's count is less than the minimum required, don't return
-    // a component.
-    if (topPartner.count < minimumAppearances)
-        return null;
-    var scenesText = topPartner.count + " " + (topPartner.count === 1 ? "scene" : "scenes");
-    var scenesLink = makePerformerScenesUrl(performer, {
-        id: topPartner.data.id,
-        label: topPartner.data.name,
-    });
-    return (React.createElement(DetailItem_1.default, { collapsed: props.collapsed, id: "appears-most-with", title: "Appears Most With", value: React.createElement("a", { href: scenesLink }, topPartner.data.name), wide: true, additionalData: {
-            id: "scene-count",
-            value: scenesText,
-        } }));
-};
-exports["default"] = ItemAppearsMostWith;
-
+eval("\nvar __rest = (this && this.__rest) || function (s, e) {\n    var t = {};\n    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)\n        t[p] = s[p];\n    if (s != null && typeof Object.getOwnPropertySymbols === \"function\")\n        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {\n            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))\n                t[p[i]] = s[p[i]];\n        }\n    return t;\n};\nvar __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {\n    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {\n        if (ar || !(i in from)) {\n            if (!ar) ar = Array.prototype.slice.call(from, 0, i);\n            ar[i] = from[i];\n        }\n    }\n    return to.concat(ar || Array.prototype.slice.call(from));\n};\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar helpers_1 = __webpack_require__(/*! ../helpers */ \"./src/helpers/index.ts\");\nvar constants_1 = __webpack_require__(/*! ../common/constants */ \"./src/common/constants.ts\");\nvar DetailItem_1 = __importDefault(__webpack_require__(/*! ./DetailItem */ \"./src/components/DetailItem.tsx\"));\nvar OverflowPopover_1 = __importDefault(__webpack_require__(/*! ./OverflowPopover */ \"./src/components/OverflowPopover.tsx\"));\nvar React = window.PluginApi.React;\nvar ItemAppearsMostWith = function (_a) {\n    var performer = _a.performer, props = __rest(_a, [\"performer\"]);\n    var _b = props.pluginConfig, appearsMostWithGendered = _b.appearsMostWithGendered, maximumTops = _b.maximumTops, minimumAppearances = _b.minimumAppearances;\n    // Create an array of performer data from all scenes\n    var partners = [];\n    // Check each scene\n    props.scenesQueryResult.scenes.forEach(function (sc) {\n        // Check each performer in the scene\n        sc.performers.forEach(function (pf) {\n            // Check this is not the featured performer\n            if (pf.id !== performer.id) {\n                // Check if the performer already exists in the array\n                var perfomersIndex = partners.findIndex(function (ptnr) { return ptnr.data.id === pf.id; });\n                if (perfomersIndex !== -1) {\n                    // Increase the performer count\n                    partners[perfomersIndex].count++;\n                }\n                else {\n                    // Add the performer to the array\n                    partners.push({\n                        count: 1,\n                        data: pf,\n                    });\n                }\n            }\n        });\n    });\n    // Sort count from highest to lowest\n    partners.sort(function (a, b) { return b.count - a.count; });\n    // If the top partner's count is less than the minimum required, don't return\n    // a component.\n    if (partners.length === 0 || partners[0].count < minimumAppearances)\n        return null;\n    if (appearsMostWithGendered) {\n        return constants_1.GENDERS.map(function (g) {\n            var genderedPartners = partners.filter(function (p) { return p.data.gender === g; });\n            // If there is no partner for the current gender or the top partner's\n            // count is less than the minimum required, don't return a component.\n            if (genderedPartners.length === 0 ||\n                genderedPartners[0].count < minimumAppearances)\n                return null;\n            var highestCount = genderedPartners[0].count;\n            var topPartners = genderedPartners\n                .filter(function (p) { return p.count === highestCount; })\n                .sort(function (a, b) { return a.data.name.localeCompare(b.data.name, \"en\"); });\n            var topPartnersData = topPartners.map(function (p) {\n                var scenesLink = linkToPartnerProfile(performer, p.data.id);\n                return { name: p.data.name, scenesLink: scenesLink };\n            });\n            var genderWord = (0, helpers_1.getGenderFromEnum)(g);\n            var genderSuffix = genderWord ? \" (\" + genderWord + \")\" : \"\";\n            var id = genderWord\n                ? \"-\" + genderWord.toLowerCase().split(\" \").join(\"-\")\n                : \"\";\n            var scenesText = topPartners[0].count +\n                \" \" +\n                (topPartners[0].count === 1 ? \"scene\" : \"scenes\");\n            var maxLinks = topPartners.length < maximumTops ? topPartners.length : maximumTops;\n            var links = [];\n            for (var i = 0; i < maxLinks; i++) {\n                links.push(React.createElement(\"a\", { href: topPartnersData[i].scenesLink }, topPartnersData[i].name));\n                if (i !== maxLinks - 1)\n                    links.push(\" / \");\n            }\n            if (topPartners.length > maxLinks) {\n                var hoverContent = topPartners.map(function (p) { return ({\n                    content: p.data.name,\n                    link: linkToPartnerProfile(performer, p.data.id),\n                }); });\n                links.push(React.createElement(OverflowPopover_1.default, { items: hoverContent, overflowAt: maxLinks },\n                    React.createElement(\"span\", { className: \"top-meta-overflow hoverable\" },\n                        \"and \",\n                        topPartners.length - maxLinks,\n                        \" more\")));\n            }\n            var value = React.createElement.apply(React, __spreadArray([React.Fragment, null], links, false));\n            return (React.createElement(DetailItem_1.default, { collapsed: props.collapsed, id: \"appears-most-with\" + id, title: \"Appears Most With \" + genderSuffix, value: value, wide: true, additionalData: {\n                    dataValue: highestCount,\n                    id: \"scene-count\",\n                    value: scenesText,\n                } }));\n        });\n    }\n    var topPartner = partners[0];\n    // If the top partner's count is less than the minimum required, don't return\n    // a component.\n    if (topPartner.count < minimumAppearances)\n        return null;\n    var scenesText = topPartner.count + \" \" + (topPartner.count === 1 ? \"scene\" : \"scenes\");\n    var scenesLink = linkToPartnerProfile(performer, topPartner.data.id);\n    return (React.createElement(DetailItem_1.default, { collapsed: props.collapsed, id: \"appears-most-with\", title: \"Appears Most With\", value: React.createElement(\"a\", { href: scenesLink }, topPartner.data.name), wide: true, additionalData: {\n            id: \"scene-count\",\n            dataValue: topPartner.count,\n            value: scenesText,\n        } }));\n};\nexports[\"default\"] = ItemAppearsMostWith;\n/** Create a link to a given partner's page, filtering scenes to only include\n * both performers. */\nvar linkToPartnerProfile = function (performer, targetID) {\n    return \"/performers/\".concat(targetID, \"/scenes?c=(\\\"type\\\":\\\"performers\\\",\\\"value\\\":(\\\"items\\\":%5B(\\\"id\\\":\\\"\").concat(performer.id, \"\\\",\\\"label\\\":\\\"\").concat(encodeURIComponent(performer.name), \"\\\")%5D,\\\"excluded\\\":%5B%5D),\\\"modifier\\\":\\\"INCLUDES\\\")\");\n};\n\n\n//# sourceURL=webpack://performer-details-extended/./src/components/ItemAppearsMostWith.tsx?");
 
 /***/ }),
 
-/***/ 138:
+/***/ "./src/components/ItemAverageRating.tsx":
+/*!**********************************************!*\
+  !*** ./src/components/ItemAverageRating.tsx ***!
+  \**********************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
 "use strict";
-
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-var DetailItem_1 = __importDefault(__webpack_require__(645));
-var React = window.PluginApi.React;
-var ItemAverageRating = function (props) {
-    var _a;
-    // Get the user's rating system
-    var defaultRatingSystem = {
-        type: "stars",
-        starPrecision: "full",
-    };
-    var ratingSystem = ((_a = props.configurationQueryResult.ui) === null || _a === void 0 ? void 0 : _a.ratingSystemOptions) || defaultRatingSystem;
-    // Get the rating for each scene
-    var scenes = props.scenesQueryResult.scenes;
-    var sceneRatings = scenes
-        .map(function (sc) { return (typeof sc.rating100 === "undefined" ? null : sc.rating100); })
-        .filter(function (r) { return r !== null; });
-    // Only return a component if at least one scene has been rated.
-    if (!sceneRatings.length)
-        return null;
-    var averageRating100 = Math.round(((sceneRatings.reduce(function (a, b) { return (a || 0) + (b || 0); }, 0) || 0) +
-        Number.EPSILON) /
-        sceneRatings.length);
-    var rating = ratingSystem.type === "decimal"
-        ? averageRating100 / 10
-        : averageRating100 / 20;
-    var additionalValue = "".concat(sceneRatings.length, " of ").concat(scenes.length, " scenes rated");
-    return (React.createElement(DetailItem_1.default, { collapsed: props.collapsed, id: "average-rating", title: "Average Scene Rating", value: rating, wide: true, additionalData: {
-            id: "scenes-rated",
-            value: additionalValue,
-        } }));
-};
-exports["default"] = ItemAverageRating;
-
+eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar DetailItem_1 = __importDefault(__webpack_require__(/*! ./DetailItem */ \"./src/components/DetailItem.tsx\"));\nvar React = window.PluginApi.React;\nvar ItemAverageRating = function (props) {\n    var _a;\n    // Get the user's rating system\n    var defaultRatingSystem = {\n        type: \"stars\",\n        starPrecision: \"full\",\n    };\n    var ratingSystem = ((_a = props.configurationQueryResult.ui) === null || _a === void 0 ? void 0 : _a.ratingSystemOptions) || defaultRatingSystem;\n    // Get the rating for each scene\n    var scenes = props.scenesQueryResult.scenes;\n    var sceneRatings = scenes\n        .map(function (sc) { return (typeof sc.rating100 === \"undefined\" ? null : sc.rating100); })\n        .filter(function (r) { return r !== null; });\n    // Only return a component if at least one scene has been rated.\n    if (!sceneRatings.length)\n        return null;\n    var averageRating100 = Math.round(((sceneRatings.reduce(function (a, b) { return (a || 0) + (b || 0); }, 0) || 0) +\n        Number.EPSILON) /\n        sceneRatings.length);\n    var rating = ratingSystem.type === \"decimal\"\n        ? averageRating100 / 10\n        : averageRating100 / 20;\n    var additionalValue = \"\".concat(sceneRatings.length, \" of \").concat(scenes.length, \" rated\");\n    return (React.createElement(DetailItem_1.default, { collapsed: props.collapsed, dataValue: rating, id: \"average-rating\", title: \"Average Scene Rating\", value: rating, wide: true, additionalData: {\n            id: \"scenes-rated\",\n            value: additionalValue,\n        } }));\n};\nexports[\"default\"] = ItemAverageRating;\n\n\n//# sourceURL=webpack://performer-details-extended/./src/components/ItemAverageRating.tsx?");
 
 /***/ }),
 
-/***/ 806:
+/***/ "./src/components/ItemOCount.tsx":
+/*!***************************************!*\
+  !*** ./src/components/ItemOCount.tsx ***!
+  \***************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
 "use strict";
-
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-var DetailItem_1 = __importDefault(__webpack_require__(645));
-var React = window.PluginApi.React;
-var ItemOCount = function (props) {
-    var total_o_count = props.statsQueryResult.total_o_count;
-    // Don't return a component if there is no O count across all performers
-    if (total_o_count === 0)
-        return null;
-    var oCount = 0;
-    props.scenesQueryResult.scenes.forEach(function (sc) {
-        if (typeof sc.o_counter !== "undefined")
-            oCount += sc.o_counter || 0;
-    });
-    // Don't return a component if there is no O count for this performer
-    if (oCount === 0)
-        return null;
-    var percentage = Math.round((oCount / total_o_count + Number.EPSILON) * 10000) / 100;
-    var additionalValue = "".concat(percentage, "% of ").concat(total_o_count, " total");
-    return (React.createElement(DetailItem_1.default, { collapsed: props.collapsed, id: "o-count", title: "O Count", value: oCount, wide: true, additionalData: {
-            id: "o-count-of-total",
-            value: additionalValue,
-        } }));
-};
-exports["default"] = ItemOCount;
-
+eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar DetailItem_1 = __importDefault(__webpack_require__(/*! ./DetailItem */ \"./src/components/DetailItem.tsx\"));\nvar React = window.PluginApi.React;\nvar ItemOCount = function (props) {\n    var total_o_count = props.statsQueryResult.total_o_count;\n    // Don't return a component if there is no O count across all performers\n    if (total_o_count === 0)\n        return null;\n    var oCount = 0;\n    props.scenesQueryResult.scenes.forEach(function (sc) {\n        if (typeof sc.o_counter !== \"undefined\")\n            oCount += sc.o_counter || 0;\n    });\n    // Don't return a component if there is no O count for this performer\n    if (oCount === 0)\n        return null;\n    var percentage = Math.round((oCount / total_o_count + Number.EPSILON) * 10000) / 100;\n    var additionalValue = \"\".concat(percentage, \"% of \").concat(total_o_count, \" total\");\n    return (React.createElement(DetailItem_1.default, { collapsed: props.collapsed, dataValue: oCount, id: \"o-count\", title: \"O Count\", value: oCount, wide: true, additionalData: {\n            id: \"o-count-of-total\",\n            dataValue: percentage,\n            value: additionalValue,\n        } }));\n};\nexports[\"default\"] = ItemOCount;\n\n\n//# sourceURL=webpack://performer-details-extended/./src/components/ItemOCount.tsx?");
 
 /***/ }),
 
-/***/ 740:
+/***/ "./src/components/ItemScenesOrganized.tsx":
+/*!************************************************!*\
+  !*** ./src/components/ItemScenesOrganized.tsx ***!
+  \************************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
 "use strict";
-
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-var DetailItem_1 = __importDefault(__webpack_require__(645));
-var React = window.PluginApi.React;
-var ItemScenesOrganized = function (props) {
-    var scenes = props.scenesQueryResult.scenes;
-    var totalScenes = scenes.length;
-    if (totalScenes < 1)
-        return null;
-    var organizedScenes = scenes.filter(function (sc) { return sc.organized; }).length;
-    return (React.createElement(DetailItem_1.default, { collapsed: props.collapsed, id: "scenes-organized", title: "Scenes Organized", value: Math.round((organizedScenes / totalScenes + Number.EPSILON) * 100) + "%", wide: true, additionalData: {
-            id: "scenes-organized-number",
-            value: organizedScenes + " of " + totalScenes,
-        } }));
-};
-exports["default"] = ItemScenesOrganized;
-
+eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar DetailItem_1 = __importDefault(__webpack_require__(/*! ./DetailItem */ \"./src/components/DetailItem.tsx\"));\nvar React = window.PluginApi.React;\nvar ItemScenesOrganized = function (props) {\n    var scenes = props.scenesQueryResult.scenes;\n    var totalScenes = scenes.length;\n    if (totalScenes < 1)\n        return null;\n    var organizedScenes = scenes.filter(function (sc) { return sc.organized; }).length;\n    var percentage = Math.round((organizedScenes / totalScenes + Number.EPSILON) * 100);\n    // Only show the additional data if it is more than 0\n    var additionalData = organizedScenes\n        ? {\n            id: \"scenes-organized-number\",\n            dataValue: organizedScenes,\n            value: organizedScenes + \" of \" + totalScenes,\n        }\n        : undefined;\n    return (React.createElement(DetailItem_1.default, { collapsed: props.collapsed, dataValue: percentage, id: \"scenes-organized\", title: \"Scenes Organized\", value: percentage + \"%\", wide: true, additionalData: additionalData }));\n};\nexports[\"default\"] = ItemScenesOrganized;\n\n\n//# sourceURL=webpack://performer-details-extended/./src/components/ItemScenesOrganized.tsx?");
 
 /***/ }),
 
-/***/ 222:
+/***/ "./src/components/ItemScenesTimespan.tsx":
+/*!***********************************************!*\
+  !*** ./src/components/ItemScenesTimespan.tsx ***!
+  \***********************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
 "use strict";
-
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-var DetailItem_1 = __importDefault(__webpack_require__(645));
-var PluginApi = window.PluginApi;
-var React = PluginApi.React;
-var ItemScenesTimespan = function (_a) {
-    var _b, _c;
-    var collapsed = _a.collapsed, scenesQueryResult = _a.scenesQueryResult;
-    // Wait for PluginApi components to load before rendering.
-    var componentsLoading = PluginApi.hooks.useLoadComponents([
-        PluginApi.loadableComponents.SceneCard,
-    ]);
-    if (componentsLoading)
-        return null;
-    var _d = PluginApi.components, HoverPopover = _d.HoverPopover, SceneCard = _d.SceneCard;
-    // Filter out scenes with no date
-    var scenes = scenesQueryResult.scenes;
-    var datedScenes = scenes.filter(function (sc) { return typeof sc.date !== "undefined"; });
-    // Require a minimum of two scenes to render this item.
-    if (datedScenes.length < 2)
-        return null;
-    var earliestScene = datedScenes[0];
-    var latestScene = datedScenes[datedScenes.length - 1];
-    return (React.createElement(DetailItem_1.default, { collapsed: collapsed, id: "scenes-timespan", title: "Scenes Timespan", value: React.createElement("div", { className: "inner-wrapper" },
-            React.createElement(HoverPopover, { placement: "bottom", content: React.createElement(SceneCard, { scene: earliestScene, compact: true }), leaveDelay: 100 },
-                React.createElement("span", { className: "hoverable" }, (_b = earliestScene.date) === null || _b === void 0 ? void 0 : _b.split("-").join("/"))),
-            React.createElement("span", { className: "separator" }, "\u2013"),
-            React.createElement(HoverPopover, { placement: "bottom", content: React.createElement(SceneCard, { scene: latestScene, compact: true }), leaveDelay: 100 },
-                React.createElement("span", { className: "hoverable" }, (_c = latestScene.date) === null || _c === void 0 ? void 0 : _c.split("-").join("/")))), wide: true }));
-};
-exports["default"] = ItemScenesTimespan;
-
+eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar DetailItem_1 = __importDefault(__webpack_require__(/*! ./DetailItem */ \"./src/components/DetailItem.tsx\"));\nvar PluginApi = window.PluginApi;\nvar React = PluginApi.React;\nvar ItemScenesTimespan = function (_a) {\n    var _b, _c;\n    var collapsed = _a.collapsed, scenesQueryResult = _a.scenesQueryResult;\n    // Wait for PluginApi components to load before rendering.\n    var componentsLoading = PluginApi.hooks.useLoadComponents([\n        PluginApi.loadableComponents.SceneCard,\n    ]);\n    if (componentsLoading)\n        return null;\n    var _d = PluginApi.components, HoverPopover = _d.HoverPopover, SceneCard = _d.SceneCard;\n    // Filter out scenes with no date\n    var scenes = scenesQueryResult.scenes;\n    var datedScenes = scenes.filter(function (sc) { return typeof sc.date !== \"undefined\"; });\n    // Require a minimum of two scenes to render this item.\n    if (datedScenes.length < 2)\n        return null;\n    var earliestScene = datedScenes[0];\n    var latestScene = datedScenes[datedScenes.length - 1];\n    return (React.createElement(DetailItem_1.default, { collapsed: collapsed, id: \"scenes-timespan\", title: \"Scenes Timespan\", value: React.createElement(\"div\", { className: \"inner-wrapper\" },\n            React.createElement(HoverPopover, { placement: \"bottom\", content: React.createElement(SceneCard, { scene: earliestScene, compact: true }), leaveDelay: 100 },\n                React.createElement(\"span\", { className: \"hoverable\" }, (_b = earliestScene.date) === null || _b === void 0 ? void 0 : _b.split(\"-\").join(\"/\"))),\n            React.createElement(\"span\", { className: \"separator\" }, \"\\u2013\"),\n            React.createElement(HoverPopover, { placement: \"bottom\", content: React.createElement(SceneCard, { scene: latestScene, compact: true }), leaveDelay: 100 },\n                React.createElement(\"span\", { className: \"hoverable\" }, (_c = latestScene.date) === null || _c === void 0 ? void 0 : _c.split(\"-\").join(\"/\")))), wide: true }));\n};\nexports[\"default\"] = ItemScenesTimespan;\n\n\n//# sourceURL=webpack://performer-details-extended/./src/components/ItemScenesTimespan.tsx?");
 
 /***/ }),
 
-/***/ 291:
+/***/ "./src/components/ItemTopStudio.tsx":
+/*!******************************************!*\
+  !*** ./src/components/ItemTopStudio.tsx ***!
+  \******************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
 "use strict";
-
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
-        }
-    return t;
-};
-var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
-    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
-        if (ar || !(i in from)) {
-            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
-            ar[i] = from[i];
-        }
-    }
-    return to.concat(ar || Array.prototype.slice.call(from));
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-var helpers_1 = __webpack_require__(730);
-var DetailItem_1 = __importDefault(__webpack_require__(645));
-var React = window.PluginApi.React;
-var ItemTopStudio = function (_a) {
-    var performer = _a.performer, props = __rest(_a, ["performer"]);
-    var _b = props.pluginConfig, maximumTops = _b.maximumTops, minimumAppearances = _b.minimumAppearances, topNetworkOn = _b.topNetworkOn;
-    var scenes = props.scenesQueryResult.scenes;
-    if (scenes.length === 0)
-        return null;
-    /* ------------------------------- Studio data ------------------------------ */
-    // Create an array of studio data from all scenes
-    var studios = [];
-    // Check each scene
-    scenes.forEach(function (sc) {
-        // If there is no studio attached to the scene, skip the scene.
-        if (!sc.studio)
-            return;
-        // Check if the scene studio already exists in the array
-        var studiosIndex = studios.findIndex(function (st) { var _a; return st.data.id === ((_a = sc.studio) === null || _a === void 0 ? void 0 : _a.id); });
-        if (studiosIndex !== -1) {
-            // Studio already appears the array. Increase its count.
-            studios[studiosIndex].count++;
-        }
-        else {
-            // Add the studio to the array
-            studios.push({ count: 1, data: sc.studio });
-        }
-    });
-    // Sort count from highest to lowest number of scenes.
-    var sortHighToLow = function (a, b) { return b.count - a.count; };
-    var sortedStudios = studios.sort(sortHighToLow);
-    // If there are no studios or the top studio's count is less than the minimum
-    // required, don't return a component.
-    if (sortedStudios.length === 0 || sortedStudios[0].count < minimumAppearances)
-        return null;
-    var highestValue = sortedStudios[0].count;
-    var topStudios = sortedStudios
-        .filter(function (st) { return st.count === highestValue; })
-        .sort(function (a, b) { return a.data.name.localeCompare(b.data.name, "en"); });
-    var topStudioData = topStudios.map(function (st) {
-        var scenesLink = "/studios/".concat(st.data.id, "/scenes?c=(\"type\":\"performers\",\"value\":(\"items\":%5B(\"id\":\"").concat(performer.id, "\",\"label\":\"").concat(encodeURIComponent(performer.name), "\")%5D,\"excluded\":%5B%5D),\"modifier\":\"INCLUDES\")");
-        return { scenesLink: scenesLink, name: st.data.name };
-    });
-    var scenesText = highestValue + (highestValue === 1 ? " scene" : " scenes");
-    var maxLinks = topStudioData.length < maximumTops ? topStudioData.length : maximumTops;
-    var links = [];
-    for (var i = 0; i < maxLinks; i++) {
-        links.push(React.createElement("a", { href: topStudioData[i].scenesLink }, topStudioData[i].name));
-        if (i !== maxLinks - 1)
-            links.push(" / ");
-    }
-    if (topStudioData.length > maxLinks) {
-        var names = topStudioData.map(function (st) { return st.name; });
-        var title = (0, helpers_1.createOverflowText)(names, maxLinks);
-        links.push(React.createElement(React.Fragment, null,
-            " ",
-            React.createElement("span", { className: "top-meta-overflow hoverable", title: title },
-                "and ",
-                topStudioData.length - maxLinks,
-                " more")));
-    }
-    var value = React.createElement.apply(React, __spreadArray([React.Fragment, null], links, false));
-    /* ------------------------------ Network data ------------------------------ */
-    var itemTopNetworkOn = null;
-    if (topNetworkOn) {
-        // Create an array of network data from all scenes
-        var networks_1 = [];
-        // If the scene studio has a network, use it. Otherwise treat the studio as
-        // the network.
-        var getNetworkData_1 = function (studioID) {
-            if (typeof studioID === "undefined")
-                return undefined;
-            var studioData = props.allStudiosQueryResult.studios.find(function (st) { return st.id === studioID; });
-            return (studioData === null || studioData === void 0 ? void 0 : studioData.parent_studio) ? studioData.parent_studio : studioData;
-        };
-        // Check each scene
-        scenes.forEach(function (sc) {
-            var _a;
-            /**
-             * ! `findStudios` is currently bugged when trying to filter to return
-             * studios featuring scenes featuring performer. Once that's fixed, this
-             * can be streamlined to use that data.
-             */
-            var network = getNetworkData_1((_a = sc.studio) === null || _a === void 0 ? void 0 : _a.id);
-            // If network is undefined or null, or exists in the top studio list, skip it
-            if (!network)
-                return;
-            // Check if the scene network already exists in the array
-            var networksIndex = networks_1.findIndex(function (nw) { return nw.data.id === network.id; });
-            if (networksIndex !== -1) {
-                // Network already appears the array. Increase its count.
-                networks_1[networksIndex].count++;
-            }
-            else {
-                // Add the network to the array
-                networks_1.push({ count: 1, data: network });
-            }
-        });
-        if (networks_1.length > 0) {
-            // Sort count from highest to lowest number of scenes.
-            var sortedNetworks = networks_1.sort(sortHighToLow);
-            // If there are no networks or the top networks's count is less than the
-            // minimum required, don't return a component.
-            if (sortedNetworks.length === 0 ||
-                sortedNetworks[0].count < minimumAppearances)
-                return null;
-            var highestNwValue_1 = sortedNetworks[0].count;
-            var topNetworks = sortedNetworks
-                .filter(function (st) { return st.count === highestNwValue_1; })
-                .sort(function (a, b) { return a.data.name.localeCompare(b.data.name, "en"); });
-            var topNetworkData = topNetworks.map(function (st) {
-                var scenesLink = "/studios/".concat(st.data.id, "/scenes?c=(\"type\":\"performers\",\"value\":(\"items\":%5B(\"id\":\"").concat(performer.id, "\",\"label\":\"").concat(encodeURIComponent(performer.name), "\")%5D,\"excluded\":%5B%5D),\"modifier\":\"INCLUDES\")");
-                return { scenesLink: scenesLink, name: st.data.name };
-            });
-            var nwScenesText = highestNwValue_1 + (highestNwValue_1 === 1 ? " scene" : " scenes");
-            var nwMaxLinks = topNetworkData.length < maximumTops
-                ? topNetworkData.length
-                : maximumTops;
-            var nwLinks = [];
-            for (var i = 0; i < nwMaxLinks; i++) {
-                nwLinks.push(React.createElement("a", { href: topNetworkData[i].scenesLink }, topNetworkData[i].name));
-                if (i !== nwMaxLinks - 1)
-                    nwLinks.push(" / ");
-            }
-            if (topNetworkData.length > nwMaxLinks) {
-                var names = topNetworkData.map(function (nw) { return nw.name; });
-                var title = (0, helpers_1.createOverflowText)(names, maxLinks);
-                nwLinks.push(React.createElement(React.Fragment, null,
-                    " ",
-                    React.createElement("span", { className: "top-meta-overflow hoverable", title: title },
-                        "and ",
-                        topNetworkData.length - maxLinks,
-                        " more")));
-            }
-            var nwValue = React.createElement.apply(React, __spreadArray([React.Fragment, null], nwLinks, false));
-            // Don't return the network unless it is different from the top studio and
-            // its count is at least the minimum required.
-            if (!(highestNwValue_1 < minimumAppearances)) {
-                itemTopNetworkOn = (React.createElement(DetailItem_1.default, { collapsed: props.collapsed, id: "top-network", title: "Top Network" + (topNetworkData.length > 1 ? "s" : ""), value: nwValue, wide: true, additionalData: {
-                        id: "top-network-scenes",
-                        value: nwScenesText,
-                    } }));
-            }
-        }
-    }
-    return (React.createElement(React.Fragment, null,
-        React.createElement(DetailItem_1.default, { collapsed: props.collapsed, id: "top-studio", title: "Top Studio" + (topStudioData.length > 1 ? "s" : ""), value: value, wide: true, additionalData: {
-                id: "top-studio-scenes",
-                value: scenesText,
-            } }),
-        itemTopNetworkOn));
-};
-exports["default"] = ItemTopStudio;
-
+eval("\nvar __rest = (this && this.__rest) || function (s, e) {\n    var t = {};\n    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)\n        t[p] = s[p];\n    if (s != null && typeof Object.getOwnPropertySymbols === \"function\")\n        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {\n            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))\n                t[p[i]] = s[p[i]];\n        }\n    return t;\n};\nvar __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {\n    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {\n        if (ar || !(i in from)) {\n            if (!ar) ar = Array.prototype.slice.call(from, 0, i);\n            ar[i] = from[i];\n        }\n    }\n    return to.concat(ar || Array.prototype.slice.call(from));\n};\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar DetailItem_1 = __importDefault(__webpack_require__(/*! ./DetailItem */ \"./src/components/DetailItem.tsx\"));\nvar OverflowPopover_1 = __importDefault(__webpack_require__(/*! ./OverflowPopover */ \"./src/components/OverflowPopover.tsx\"));\nvar React = window.PluginApi.React;\nvar ItemTopStudio = function (_a) {\n    var performer = _a.performer, props = __rest(_a, [\"performer\"]);\n    var _b = props.pluginConfig, maximumTops = _b.maximumTops, minimumAppearances = _b.minimumAppearances, topNetworkOn = _b.topNetworkOn;\n    var studios = props.studiosQueryResult.studios;\n    var scenes = props.scenesQueryResult.scenes;\n    if (studios.length === 0)\n        return null;\n    /* ------------------------------- Studio data ------------------------------ */\n    // Create an array of studio data from all scenes\n    var studiosData = [];\n    // Check each scene\n    scenes.forEach(function (sc) {\n        // If there is no studio attached to the scene, skip the scene.\n        if (!sc.studio)\n            return;\n        // Check if the scene studio already exists in the array\n        var studiosIndex = studiosData.findIndex(function (st) { var _a; return st.data.id === ((_a = sc.studio) === null || _a === void 0 ? void 0 : _a.id); });\n        if (studiosIndex !== -1) {\n            // Studio already appears the array. Increase its count.\n            studiosData[studiosIndex].count++;\n        }\n        else {\n            // Add the studio to the array\n            studiosData.push({ count: 1, data: sc.studio });\n        }\n    });\n    // Sort count from highest to lowest number of scenes.\n    var sortHighToLow = function (a, b) { return b.count - a.count; };\n    var sortedStudios = studiosData.sort(sortHighToLow);\n    // If there are no studios or the top studio's count is less than the minimum\n    // required, don't return a component.\n    if (sortedStudios.length === 0 || sortedStudios[0].count < minimumAppearances)\n        return null;\n    var highestValue = sortedStudios[0].count;\n    var topStudios = sortedStudios\n        .filter(function (st) { return st.count === highestValue; })\n        .sort(function (a, b) { return a.data.name.localeCompare(b.data.name, \"en\"); });\n    var topStudioData = topStudios.map(function (st) { return ({\n        scenesLink: linkToStudioProfile(performer, st.data.id),\n        data: st.data,\n    }); });\n    var scenesText = highestValue + (highestValue === 1 ? \" scene\" : \" scenes\");\n    var maxLinks = topStudioData.length < maximumTops ? topStudioData.length : maximumTops;\n    var links = [];\n    for (var i = 0; i < maxLinks; i++) {\n        links.push(React.createElement(\"a\", { href: topStudioData[i].scenesLink }, topStudioData[i].data.name));\n        if (i !== maxLinks - 1)\n            links.push(\" / \");\n    }\n    if (topStudioData.length > maxLinks) {\n        var hoverContent = topStudioData.map(function (st) { return ({\n            content: st.data.name,\n            link: linkToStudioProfile(performer, st.data.id),\n        }); });\n        links.push(React.createElement(OverflowPopover_1.default, { items: hoverContent, overflowAt: maxLinks },\n            React.createElement(\"span\", { className: \"top-meta-overflow hoverable\" },\n                \"and \",\n                topStudioData.length - maxLinks,\n                \" more\")));\n    }\n    var value = React.createElement.apply(React, __spreadArray([React.Fragment, null], links, false));\n    /* ------------------------------ Network data ------------------------------ */\n    var itemTopNetworkOn = null;\n    if (topNetworkOn) {\n        // Create an array of network data from all scenes\n        var networksData_1 = [];\n        // If the scene studio has a network, use it. Otherwise treat the studio as\n        // the network.\n        var getNetworkData_1 = function (studioID) {\n            if (typeof studioID === \"undefined\")\n                return undefined;\n            var studioData = props.studiosQueryResult.studios.find(function (st) { return st.id === studioID; });\n            return (studioData === null || studioData === void 0 ? void 0 : studioData.parent_studio) ? studioData.parent_studio : studioData;\n        };\n        // Check each scene\n        scenes.forEach(function (sc) {\n            var _a;\n            /**\n             * ! `findStudios` is currently bugged when trying to filter to return\n             * studios featuring scenes featuring performer. Once that's fixed, this\n             * can be streamlined to use that data.\n             */\n            var network = getNetworkData_1((_a = sc.studio) === null || _a === void 0 ? void 0 : _a.id);\n            // If network is undefined or null, or exists in the top studio list, skip it\n            if (!network)\n                return;\n            // Check if the scene network already exists in the array\n            var networksIndex = networksData_1.findIndex(function (nw) { return nw.data.id === network.id; });\n            if (networksIndex !== -1) {\n                // Network already appears the array. Increase its count.\n                networksData_1[networksIndex].count++;\n            }\n            else {\n                // Add the network to the array\n                networksData_1.push({ count: 1, data: network });\n            }\n        });\n        if (networksData_1.length > 0) {\n            // Sort count from highest to lowest number of scenes.\n            var sortedNetworks = networksData_1.sort(sortHighToLow);\n            // If there are no networks or the top networks's count is less than the\n            // minimum required, don't return a component.\n            if (sortedNetworks.length === 0 ||\n                sortedNetworks[0].count < minimumAppearances)\n                return null;\n            var highestNwValue_1 = sortedNetworks[0].count;\n            var topNetworks = sortedNetworks\n                .filter(function (st) { return st.count === highestNwValue_1; })\n                .sort(function (a, b) { return a.data.name.localeCompare(b.data.name, \"en\"); });\n            var topNetworkData = topNetworks.map(function (st) {\n                var scenesLink = \"/studios/\".concat(st.data.id, \"/scenes?c=(\\\"type\\\":\\\"performers\\\",\\\"value\\\":(\\\"items\\\":%5B(\\\"id\\\":\\\"\").concat(performer.id, \"\\\",\\\"label\\\":\\\"\").concat(encodeURIComponent(performer.name), \"\\\")%5D,\\\"excluded\\\":%5B%5D),\\\"modifier\\\":\\\"INCLUDES\\\")\");\n                return { scenesLink: scenesLink, data: st.data };\n            });\n            var nwScenesText = highestNwValue_1 + (highestNwValue_1 === 1 ? \" scene\" : \" scenes\");\n            var nwMaxLinks = topNetworkData.length < maximumTops\n                ? topNetworkData.length\n                : maximumTops;\n            var nwLinks = [];\n            for (var i = 0; i < nwMaxLinks; i++) {\n                nwLinks.push(React.createElement(\"a\", { href: topNetworkData[i].scenesLink }, topNetworkData[i].data.name));\n                if (i !== nwMaxLinks - 1)\n                    nwLinks.push(\" / \");\n            }\n            if (topNetworkData.length > nwMaxLinks) {\n                var nwHoverContent = topNetworkData.map(function (nw) { return ({\n                    content: nw.data.name,\n                    link: linkToStudioProfile(performer, nw.data.id),\n                }); });\n                nwLinks.push(React.createElement(OverflowPopover_1.default, { items: nwHoverContent, overflowAt: nwMaxLinks },\n                    React.createElement(\"span\", { className: \"top-meta-overflow hoverable\" },\n                        \"and \",\n                        topNetworkData.length - nwMaxLinks,\n                        \" more\")));\n            }\n            var nwValue = React.createElement.apply(React, __spreadArray([React.Fragment, null], nwLinks, false));\n            // Don't return the network unless it is different from the top studio and\n            // its count is at least the minimum required.\n            if (!(highestNwValue_1 < minimumAppearances)) {\n                itemTopNetworkOn = (React.createElement(DetailItem_1.default, { collapsed: props.collapsed, id: \"top-network\", title: \"Top Network\" + (topNetworkData.length > 1 ? \"s\" : \"\"), value: nwValue, wide: true, additionalData: {\n                        dataValue: highestNwValue_1,\n                        id: \"top-network-scenes\",\n                        value: nwScenesText,\n                    } }));\n            }\n        }\n    }\n    return (React.createElement(React.Fragment, null,\n        React.createElement(DetailItem_1.default, { collapsed: props.collapsed, id: \"top-studio\", title: \"Top Studio\" + (topStudioData.length > 1 ? \"s\" : \"\"), value: value, wide: true, additionalData: {\n                dataValue: highestValue,\n                id: \"top-studio-scenes\",\n                value: scenesText,\n            } }),\n        itemTopNetworkOn));\n};\nexports[\"default\"] = ItemTopStudio;\n/** Create a link to a given studio's page, filtering scenes to only include\n * this performer. */\nvar linkToStudioProfile = function (performer, studioID) {\n    return \"/studios/\".concat(studioID, \"/scenes?c=(\\\"type\\\":\\\"performers\\\",\\\"value\\\":(\\\"items\\\":%5B(\\\"id\\\":\\\"\").concat(performer.id, \"\\\",\\\"label\\\":\\\"\").concat(encodeURIComponent(performer.name), \"\\\")%5D,\\\"excluded\\\":%5B%5D),\\\"modifier\\\":\\\"INCLUDES\\\")\");\n};\n\n\n//# sourceURL=webpack://performer-details-extended/./src/components/ItemTopStudio.tsx?");
 
 /***/ }),
 
-/***/ 182:
+/***/ "./src/components/ItemTopTags.tsx":
+/*!****************************************!*\
+  !*** ./src/components/ItemTopTags.tsx ***!
+  \****************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
 "use strict";
-
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
-        }
-    return t;
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-var DetailItem_1 = __importDefault(__webpack_require__(645));
-var TagItem_1 = __importDefault(__webpack_require__(718));
-var React = window.PluginApi.React;
-var ItemTopTags = function (_a) {
-    var performer = _a.performer, props = __rest(_a, ["performer"]);
-    var _b = props.pluginConfig, topTagsCount = _b.topTagsCount, topTagsOn = _b.topTagsOn;
-    // Do not render the item if the user has turned it off in the config.
-    if (!topTagsOn)
-        return null;
-    // Create an array of tag data from all scenes
-    var tags = [];
-    // Check each scene
-    props.scenesQueryResult.scenes.forEach(function (sc) {
-        // Check each tag in the scene
-        sc.tags.forEach(function (tag) {
-            // Check if the tag already exists in the array
-            var tagIndex = tags.findIndex(function (t) { return t.data.id === tag.id; });
-            if (tagIndex !== -1) {
-                // Increase the tag count
-                tags[tagIndex].count++;
-            }
-            else {
-                // Add the tag to the array
-                tags.push({
-                    count: 1,
-                    data: tag,
-                });
-            }
-        });
-    });
-    // Sort count from highest to lowest
-    tags.sort(function (a, b) { return b.count - a.count; });
-    // Return null if there are no tags
-    if (!tags.length)
-        return null;
-    // Return the tags with the highest overall count, up to the tagCount
-    var maxTags = tags.length < topTagsCount ? tags.length : topTagsCount;
-    var value = [];
-    for (var i = 0; i < maxTags; i++) {
-        var tagCount = tags[i].count;
-        var tagData = tags[i].data;
-        var link = "/scenes?c=(\"type\":\"performers\",\"value\":(\"items\":%5B(\"id\":\"".concat(performer.id, "\",\"label\":\"").concat(encodeURIComponent(performer.name), "\")%5D,\"excluded\":%5B%5D),\"modifier\":\"INCLUDES\")&c=(\"type\":\"tags\",\"value\":(\"items\":%5B(\"id\":\"").concat(tagData.id, "\",\"label\":\"").concat(encodeURIComponent(tagData.name), "\")%5D,\"excluded\":%5B%5D,\"depth\":0),\"modifier\":\"INCLUDES\")");
-        value.push(React.createElement(TagItem_1.default, { link: link, title: "".concat(tagData.name, " (").concat(tagCount, " ").concat(tagCount === 1 ? "scene" : "scenes", ")") }));
-    }
-    var title = "Top Tag" + (topTagsCount === 1 ? "" : "s");
-    return (React.createElement(DetailItem_1.default, { collapsed: props.collapsed, id: "top-tags", title: title, value: value, wide: true }));
-};
-exports["default"] = ItemTopTags;
-
+eval("\nvar __rest = (this && this.__rest) || function (s, e) {\n    var t = {};\n    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)\n        t[p] = s[p];\n    if (s != null && typeof Object.getOwnPropertySymbols === \"function\")\n        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {\n            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))\n                t[p[i]] = s[p[i]];\n        }\n    return t;\n};\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar helpers_1 = __webpack_require__(/*! ../helpers */ \"./src/helpers/index.ts\");\nvar DetailItem_1 = __importDefault(__webpack_require__(/*! ./DetailItem */ \"./src/components/DetailItem.tsx\"));\nvar TagItem_1 = __importDefault(__webpack_require__(/*! ./TagItem */ \"./src/components/TagItem.tsx\"));\nvar React = window.PluginApi.React;\nvar ItemTopTags = function (_a) {\n    var allTagsQueryResult = _a.allTagsQueryResult, performer = _a.performer, props = __rest(_a, [\"allTagsQueryResult\", \"performer\"]);\n    var _b = props.pluginConfig, topTagsBlacklist = _b.topTagsBlacklist, topTagsBlacklistChildren = _b.topTagsBlacklistChildren, topTagsCount = _b.topTagsCount, topTagsOn = _b.topTagsOn;\n    // Do not render the item if the user has turned it off in the config.\n    if (!topTagsOn)\n        return null;\n    // Create blacklist array\n    var blacklist = topTagsBlacklist.split(\",\").map(function (tag) { return tag.trim(); });\n    // Create an array of tag data from all scenes\n    var tags = [];\n    // Check each scene\n    props.scenesQueryResult.scenes.forEach(function (sc) {\n        // Check each tag in the scene\n        sc.tags.forEach(function (tag) {\n            // Check if the tag is in the blacklist. If so, skip it.\n            if (blacklist.findIndex(function (t) { return t === tag.name.trim(); }) !== -1)\n                return;\n            // If blacklisting child tags is active, check if this tag is a descendant\n            // of a blacklisted tag.\n            if (topTagsBlacklistChildren) {\n                var _loop_1 = function (blTag) {\n                    if (allTagsQueryResult.tags.find(function (tg) { return tg.name === blTag; })) {\n                        if ((0, helpers_1.tagIsDescendantOf)(allTagsQueryResult, tag.name, blTag)) {\n                            return { value: void 0 };\n                        }\n                    }\n                };\n                for (var _i = 0, blacklist_1 = blacklist; _i < blacklist_1.length; _i++) {\n                    var blTag = blacklist_1[_i];\n                    var state_1 = _loop_1(blTag);\n                    if (typeof state_1 === \"object\")\n                        return state_1.value;\n                }\n            }\n            // Check if the tag already exists in the array\n            var tagIndex = tags.findIndex(function (t) { return t.data.id === tag.id; });\n            if (tagIndex !== -1) {\n                // Increase the tag count\n                tags[tagIndex].count++;\n            }\n            else {\n                // Add the tag to the array\n                tags.push({\n                    count: 1,\n                    data: tag,\n                });\n            }\n        });\n    });\n    // Sort count from highest to lowest\n    tags.sort(function (a, b) { return b.count - a.count; });\n    // Return null if there are no tags\n    if (!tags.length)\n        return null;\n    // Return the tags with the highest overall count, up to the tagCount\n    var maxTags = tags.length < topTagsCount ? tags.length : topTagsCount;\n    var value = [];\n    for (var i = 0; i < maxTags; i++) {\n        var tagCount = tags[i].count;\n        var tagData = tags[i].data;\n        var link = linkToTagProfile(performer, tagData.id);\n        value.push(React.createElement(TagItem_1.default, { link: link, title: \"\".concat(tagData.name, \" (\").concat(tagCount, \" \").concat(tagCount === 1 ? \"scene\" : \"scenes\", \")\") }));\n    }\n    var title = \"Top Tag\" + (topTagsCount === 1 ? \"\" : \"s\");\n    return (React.createElement(DetailItem_1.default, { collapsed: props.collapsed, id: \"top-tags\", title: title, value: value, wide: true }));\n};\nexports[\"default\"] = ItemTopTags;\n/** Create a link to a given tag page, filtering scenes to only include the\n * performer. */\nvar linkToTagProfile = function (performer, tagID) {\n    return \"/tags/\".concat(tagID, \"/scenes?c=(\\\"type\\\":\\\"performers\\\",\\\"value\\\":(\\\"items\\\":%5B(\\\"id\\\":\\\"\").concat(performer.id, \"\\\",\\\"label\\\":\\\"\").concat(encodeURIComponent(performer.name), \"\\\")%5D,\\\"excluded\\\":%5B%5D),\\\"modifier\\\":\\\"INCLUDES\\\")\");\n};\n\n\n//# sourceURL=webpack://performer-details-extended/./src/components/ItemTopTags.tsx?");
 
 /***/ }),
 
-/***/ 959:
+/***/ "./src/components/ItemTotalContent.tsx":
+/*!*********************************************!*\
+  !*** ./src/components/ItemTotalContent.tsx ***!
+  \*********************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
 "use strict";
-
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-var helpers_1 = __webpack_require__(730);
-var DetailItem_1 = __importDefault(__webpack_require__(645));
-var React = window.PluginApi.React;
-var ItemTotalContent = function (props) {
-    var _a = props.scenesQueryResult, duration = _a.duration, filesize = _a.filesize;
-    return (React.createElement(DetailItem_1.default, { collapsed: props.collapsed, id: "total-content", title: "Total Content", value: (0, helpers_1.createDuration)(duration), wide: true, additionalData: {
-            id: "total-filesize",
-            value: (0, helpers_1.createFilesize)(filesize),
-        } }));
-};
-exports["default"] = ItemTotalContent;
-
+eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar helpers_1 = __webpack_require__(/*! ../helpers */ \"./src/helpers/index.ts\");\nvar DetailItem_1 = __importDefault(__webpack_require__(/*! ./DetailItem */ \"./src/components/DetailItem.tsx\"));\nvar React = window.PluginApi.React;\nvar ItemTotalContent = function (props) {\n    var _a = props.scenesQueryResult, duration = _a.duration, filesize = _a.filesize;\n    // Only show the data if filesize is more than 0\n    if (filesize === 0)\n        return null;\n    return (React.createElement(DetailItem_1.default, { collapsed: props.collapsed, id: \"total-content\", title: \"Total Content\", value: (0, helpers_1.createDuration)(duration), wide: true, additionalData: {\n            dataValue: filesize,\n            id: \"total-filesize\",\n            value: (0, helpers_1.createFilesize)(filesize),\n        } }));\n};\nexports[\"default\"] = ItemTotalContent;\n\n\n//# sourceURL=webpack://performer-details-extended/./src/components/ItemTotalContent.tsx?");
 
 /***/ }),
 
-/***/ 632:
+/***/ "./src/components/ItemTotalPlayDuration.tsx":
+/*!**************************************************!*\
+  !*** ./src/components/ItemTotalPlayDuration.tsx ***!
+  \**************************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
 "use strict";
-
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-var helpers_1 = __webpack_require__(730);
-var DetailItem_1 = __importDefault(__webpack_require__(645));
-var React = window.PluginApi.React;
-/** "Total Play Duration" item component. */
-var ItemTotalPlayDuration = function (_a) {
-    var collapsed = _a.collapsed, scenesQueryResult = _a.scenesQueryResult;
-    var playCount = 0;
-    var playDuration = 0;
-    for (var _i = 0, _b = scenesQueryResult.scenes; _i < _b.length; _i++) {
-        var scene = _b[_i];
-        playCount += (scene === null || scene === void 0 ? void 0 : scene.play_count) || 0;
-        playDuration += scene.play_duration || 0;
-    }
-    return (React.createElement(DetailItem_1.default, { collapsed: collapsed, id: "total-play-duration", title: "Total Play Duration", value: (0, helpers_1.createDuration)(playDuration), wide: true, additionalData: {
-            id: "total-play-count",
-            value: "".concat(playCount, " ").concat(playCount === 1 ? "play" : "plays"),
-        } }));
-};
-exports["default"] = ItemTotalPlayDuration;
-
+eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar helpers_1 = __webpack_require__(/*! ../helpers */ \"./src/helpers/index.ts\");\nvar DetailItem_1 = __importDefault(__webpack_require__(/*! ./DetailItem */ \"./src/components/DetailItem.tsx\"));\nvar React = window.PluginApi.React;\n/** \"Total Play Duration\" item component. */\nvar ItemTotalPlayDuration = function (_a) {\n    var collapsed = _a.collapsed, scenesQueryResult = _a.scenesQueryResult;\n    var playCount = 0;\n    var playDuration = 0;\n    for (var _i = 0, _b = scenesQueryResult.scenes; _i < _b.length; _i++) {\n        var scene = _b[_i];\n        playCount += (scene === null || scene === void 0 ? void 0 : scene.play_count) || 0;\n        playDuration += scene.play_duration || 0;\n    }\n    if (playDuration === 0)\n        return null;\n    // Only show the additional data if it is more than 0\n    var additionalData = playCount\n        ? {\n            dataValue: playCount,\n            id: \"total-play-count\",\n            value: \"\".concat(playCount, \" \").concat(playCount === 1 ? \"play\" : \"plays\"),\n        }\n        : undefined;\n    return (React.createElement(DetailItem_1.default, { collapsed: collapsed, dataValue: playDuration, id: \"total-play-duration\", title: \"Total Play Duration\", value: (0, helpers_1.createDuration)(playDuration), wide: true, additionalData: additionalData }));\n};\nexports[\"default\"] = ItemTotalPlayDuration;\n\n\n//# sourceURL=webpack://performer-details-extended/./src/components/ItemTotalPlayDuration.tsx?");
 
 /***/ }),
 
-/***/ 718:
+/***/ "./src/components/OverflowPopover.tsx":
+/*!********************************************!*\
+  !*** ./src/components/OverflowPopover.tsx ***!
+  \********************************************/
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-var React = window.PluginApi.React;
-/** A custom tag item component designed to look like the native component, but
- * with more customisation options. */
-var TagItem = function (props) {
-    /**
-     * ! Awaiting `TagCard` component to be made available in order to add the
-     * hover popover. See
-     * https://github.com/stashapp/stash/issues/4510#issuecomment-2171511553
-     */
-    return (React.createElement("span", { className: "tag-item badge badge-secondary" },
-        React.createElement("a", { href: props.link }, props.title)));
-};
-exports["default"] = TagItem;
-
+eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar PluginApi = window.PluginApi;\nvar React = PluginApi.React;\nvar OverflowPopover = function (props) {\n    // Wait for PluginApi components to load before rendering.\n    var componentsLoading = PluginApi.hooks.useLoadComponents([\n        PluginApi.loadableComponents.SceneCard,\n    ]);\n    if (componentsLoading)\n        return null;\n    var HoverPopover = PluginApi.components.HoverPopover;\n    var content = (React.createElement(\"ul\", { style: {\n            listStyle: \"none\",\n            padding: \"0.5rem 1rem\",\n            marginBottom: 0,\n            textAlign: \"left\",\n        } }, props.items.map(function (item, i) {\n        return i < props.overflowAt ? null : (React.createElement(\"li\", null, typeof item.link !== \"undefined\" ? (React.createElement(\"a\", { href: item.link }, item.content)) : (item.content)));\n    })));\n    return (React.createElement(HoverPopover, { className: \"overflow-popover\", children: props.children, content: content, leaveDelay: 100, placement: \"bottom\" }));\n};\nexports[\"default\"] = OverflowPopover;\n\n\n//# sourceURL=webpack://performer-details-extended/./src/components/OverflowPopover.tsx?");
 
 /***/ }),
 
-/***/ 730:
+/***/ "./src/components/TagItem.tsx":
+/*!************************************!*\
+  !*** ./src/components/TagItem.tsx ***!
+  \************************************/
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.createOverflowText = exports.getGenderFromEnum = exports.createFilesize = exports.createDuration = void 0;
-/** Converts the given seconds into a uniform string showing an amount of time.
- * */
-var createDuration = function (seconds) {
-    var inMinutes = Math.floor(seconds / 60);
-    var inHours = Math.floor(inMinutes / 60);
-    var inDays = Math.floor(inHours / 24);
-    var output = "";
-    var totalHours = inHours % 24;
-    var totalMinutes = inMinutes % 60;
-    var totalSeconds = seconds % 60;
-    if (inDays > 0)
-        output += inDays + " days ";
-    if (!!totalHours || !!output.length)
-        output += totalHours + "h ";
-    if (!!totalMinutes || !!output.length)
-        output += totalMinutes + "m ";
-    // Round down to match native
-    output += Math.floor(totalSeconds) + "s ";
-    return output;
-};
-exports.createDuration = createDuration;
-/** Converts the given bytes into a uniform string showing a filesize, from
- * bytes to terabytes. */
-var createFilesize = function (bytes) {
-    var b = roundToTwo(bytes);
-    var kb = roundToTwo(bytes / 1024);
-    if (kb < 1)
-        return b + "B";
-    var mb = roundToTwo(kb / 1024);
-    if (mb < 1)
-        return kb + "KB";
-    var gb = roundToTwo(mb / 1024);
-    if (gb < 1)
-        return mb + "MB";
-    var tb = roundToTwo(gb / 1024);
-    if (tb < 1)
-        return gb + "GB";
-    return tb + "TB";
-};
-exports.createFilesize = createFilesize;
-/** Returns the associated string GenderEnum as a human-readable value. */
-var getGenderFromEnum = function (gender) {
-    switch (gender) {
-        case "MALE":
-            return "Male";
-        case "FEMALE":
-            return "Female";
-        case "TRANSGENDER_MALE":
-            return "Transgender male";
-        case "TRANSGENDER_FEMALE":
-            return "Transgender female";
-        case "INTERSEX":
-            return "Intersex";
-        case "NON_BINARY":
-            return "Non-binary";
-    }
-    return null;
-};
-exports.getGenderFromEnum = getGenderFromEnum;
-/** Round the provided number to two decimal places. */
-var roundToTwo = function (number) {
-    return Math.round((number + Number.EPSILON) * 100) / 100;
-};
-/** Creates a string list of names from an array of data which overflowa an item
- * */
-var createOverflowText = function (arr, overflowAt) {
-    var overflow = "";
-    for (var i = overflowAt; i < arr.length; i++) {
-        overflow += arr[i];
-        var isOneBeforeLast = i === arr.length - 2;
-        var isAnyBeforeLast = i < arr.length - 1;
-        if (arr.length - overflowAt === 2) {
-            overflow += isOneBeforeLast ? " and " : "";
-        }
-        else {
-            if (isAnyBeforeLast)
-                overflow += ", ";
-            if (isOneBeforeLast)
-                overflow += "and ";
-        }
-    }
-    return overflow;
-};
-exports.createOverflowText = createOverflowText;
-
+eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar React = window.PluginApi.React;\n/** A custom tag item component designed to look like the native component, but\n * with more customisation options. */\nvar TagItem = function (props) {\n    /**\n     * ! Awaiting `TagCard` component to be made available in order to add the\n     * hover popover. See\n     * https://github.com/stashapp/stash/issues/4510#issuecomment-2171511553\n     */\n    return (React.createElement(\"span\", { className: \"tag-item badge badge-secondary\" },\n        React.createElement(\"a\", { href: props.link }, props.title)));\n};\nexports[\"default\"] = TagItem;\n\n\n//# sourceURL=webpack://performer-details-extended/./src/components/TagItem.tsx?");
 
 /***/ }),
 
-/***/ 221:
+/***/ "./src/helpers/index.ts":
+/*!******************************!*\
+  !*** ./src/helpers/index.ts ***!
+  \******************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.tagIsDescendantOf = exports.createOverflowText = exports.getGenderFromEnum = exports.createFilesize = exports.createDuration = void 0;\n/** Converts the given seconds into a uniform string showing an amount of time.\n * */\nvar createDuration = function (seconds) {\n    var inMinutes = Math.floor(seconds / 60);\n    var inHours = Math.floor(inMinutes / 60);\n    var inDays = Math.floor(inHours / 24);\n    var output = \"\";\n    var totalHours = inHours % 24;\n    var totalMinutes = inMinutes % 60;\n    var totalSeconds = seconds % 60;\n    if (inDays > 0)\n        output += inDays + \" days \";\n    if (!!totalHours || !!output.length)\n        output += totalHours + \"h \";\n    if (!!totalMinutes || !!output.length)\n        output += totalMinutes + \"m \";\n    // Round down to match native\n    output += Math.floor(totalSeconds) + \"s \";\n    return output;\n};\nexports.createDuration = createDuration;\n/** Converts the given bytes into a uniform string showing a filesize, from\n * bytes to terabytes. */\nvar createFilesize = function (bytes) {\n    var b = roundToTwo(bytes);\n    var kb = roundToTwo(bytes / 1024);\n    if (kb < 1)\n        return b + \"B\";\n    var mb = roundToTwo(kb / 1024);\n    if (mb < 1)\n        return kb + \"KB\";\n    var gb = roundToTwo(mb / 1024);\n    if (gb < 1)\n        return mb + \"MB\";\n    var tb = roundToTwo(gb / 1024);\n    if (tb < 1)\n        return gb + \"GB\";\n    return tb + \"TB\";\n};\nexports.createFilesize = createFilesize;\n/** Returns the associated string GenderEnum as a human-readable value. */\nvar getGenderFromEnum = function (gender) {\n    switch (gender) {\n        case \"MALE\":\n            return \"Male\";\n        case \"FEMALE\":\n            return \"Female\";\n        case \"TRANSGENDER_MALE\":\n            return \"Transgender male\";\n        case \"TRANSGENDER_FEMALE\":\n            return \"Transgender female\";\n        case \"INTERSEX\":\n            return \"Intersex\";\n        case \"NON_BINARY\":\n            return \"Non-binary\";\n    }\n    return null;\n};\nexports.getGenderFromEnum = getGenderFromEnum;\n/** Round the provided number to two decimal places. */\nvar roundToTwo = function (number) {\n    return Math.round((number + Number.EPSILON) * 100) / 100;\n};\n/** Creates a string list of names from an array of data which overflowa an item\n * */\nvar createOverflowText = function (arr, overflowAt) {\n    var overflow = \"\";\n    for (var i = overflowAt; i < arr.length; i++) {\n        overflow += arr[i];\n        var isOneBeforeLast = i === arr.length - 2;\n        var isAnyBeforeLast = i < arr.length - 1;\n        if (arr.length - overflowAt === 2) {\n            overflow += isOneBeforeLast ? \" and \" : \"\";\n        }\n        else {\n            if (isAnyBeforeLast)\n                overflow += \", \";\n            if (isOneBeforeLast)\n                overflow += \"and \";\n        }\n    }\n    return overflow;\n};\nexports.createOverflowText = createOverflowText;\n/** Returns a boolean identifying whether a given tag is a descendant of another\n * tag. */\nvar tagIsDescendantOf = function (allTagData, tagName, ancestorName) {\n    /**\n     * ! Ideally this needs refactoring if/when more tag data becomes available in\n     * the `findScenes` query. That query doesn't return full tag data, so only\n     * basic parent data is returned. In order for this to work, the full data for\n     * the specific tag needs to be taken from a `findTags` query. This works for\n     * now but could be quite slow and intensive.\n     */\n    var _a, _b;\n    var tag = allTagData.tags.find(function (tg) { return tg.name === tagName; });\n    var ancestor = allTagData.tags.find(function (tg) { return tg.name === ancestorName; });\n    // Only run check if data for both tags is available\n    if (tag && ancestor) {\n        // If the tag has no parents, it's not a descendant\n        if (tag.parent_count === 0)\n            return false;\n        var _loop_1 = function (parent_1) {\n            if (parent_1.id === ancestor.id)\n                return { value: true };\n            else\n                return { value: (0, exports.tagIsDescendantOf)(allTagData, (_a = allTagData.tags.find(function (tg) { return tg.name === parent_1.name; })) === null || _a === void 0 ? void 0 : _a.name, (_b = allTagData.tags.find(function (tg) { return tg.name === ancestor.name; })) === null || _b === void 0 ? void 0 : _b.name) };\n        };\n        // Loop through each parent tag\n        for (var _i = 0, _c = tag.parents; _i < _c.length; _i++) {\n            var parent_1 = _c[_i];\n            var state_1 = _loop_1(parent_1);\n            if (typeof state_1 === \"object\")\n                return state_1.value;\n        }\n    }\n    return false;\n};\nexports.tagIsDescendantOf = tagIsDescendantOf;\n\n\n//# sourceURL=webpack://performer-details-extended/./src/helpers/index.ts?");
+
+/***/ }),
+
+/***/ "./src/main.tsx":
+/*!**********************!*\
+  !*** ./src/main.tsx ***!
+  \**********************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
 "use strict";
-
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-var DetailGroup_1 = __importDefault(__webpack_require__(687));
-var ItemAverageRating_1 = __importDefault(__webpack_require__(138));
-var ItemAppearsMostWith_1 = __importDefault(__webpack_require__(327));
-var ItemOCount_1 = __importDefault(__webpack_require__(806));
-var ItemScenesOrganized_1 = __importDefault(__webpack_require__(740));
-var ItemScenesTimespan_1 = __importDefault(__webpack_require__(222));
-var ItemTopStudio_1 = __importDefault(__webpack_require__(291));
-var ItemTopTags_1 = __importDefault(__webpack_require__(182));
-var ItemTotalContent_1 = __importDefault(__webpack_require__(959));
-var ItemTotalPlayDuration_1 = __importDefault(__webpack_require__(632));
-__webpack_require__(680);
-var PluginApi = window.PluginApi;
-var GQL = PluginApi.GQL, React = PluginApi.React;
-/* -------------------------------------------------------------------------- */
-/*                               PluginApi patch                              */
-/* -------------------------------------------------------------------------- */
-PluginApi.patch.after("PerformerDetailsPanel.DetailGroup", function (_a) {
-    var children = _a.children, collapsed = _a.collapsed, performer = _a.performer;
-    var performerID = performer.id;
-    var qScenes = GQL.useFindScenesQuery({
-        variables: {
-            filter: { per_page: -1, sort: "date" },
-            scene_filter: {
-                performers: {
-                    modifier: "INCLUDES" /* CriterionModifier.Includes */,
-                    value: [performerID],
-                },
-            },
-        },
-    });
-    var qAllStudios = GQL.useFindStudiosQuery({
-        variables: { filter: { per_page: -1, sort: "id" } },
-    });
-    var qConfig = GQL.useConfigurationQuery();
-    var qStats = GQL.useStatsQuery();
-    /**
-     * Only display the plugin data if:
-     * * The required data has been loaded.
-     * * AND The performer details section is NOT collapsed
-     * * UNLESS the user has set to override this behaviour.
-     */
-    var dataLoaded = !!qScenes.data &&
-        qScenes.data.findScenes.scenes.length &&
-        !!qConfig.data &&
-        !!qStats.data &&
-        !!qAllStudios.data &&
-        performerID !== null;
-    if (dataLoaded) {
-        var allStudiosQueryResult = qAllStudios.data.findStudios;
-        var configurationQueryResult = qConfig.data
-            .configuration;
-        var scenesQueryResult = qScenes.data.findScenes;
-        var statsQueryResult = qStats.data.stats;
-        var showAllDetails = configurationQueryResult.ui.showAllDetails;
-        var userConfig = configurationQueryResult.plugins.PerformerDetailsExtended;
-        // Compile the user's config with config defaults
-        var pluginConfig = {
-            // For topTagsCount, set to 3 if the value is undefined or 0.
-            appearsMostWithGendered: getConfigProp(userConfig === null || userConfig === void 0 ? void 0 : userConfig.appearsMostWithGendered, true),
-            maximumTops: getConfigProp(userConfig === null || userConfig === void 0 ? void 0 : userConfig.maximumTops, 3),
-            minimumAppearances: getConfigProp(userConfig === null || userConfig === void 0 ? void 0 : userConfig.minimumAppearances, 2),
-            showWhenCollapsed: getConfigProp(userConfig === null || userConfig === void 0 ? void 0 : userConfig.showWhenCollapsed, showAllDetails || false),
-            topNetworkOn: getConfigProp(userConfig === null || userConfig === void 0 ? void 0 : userConfig.topNetworkOn, true),
-            topTagsCount: (userConfig === null || userConfig === void 0 ? void 0 : userConfig.topTagsCount) || 3,
-            topTagsOn: getConfigProp(userConfig === null || userConfig === void 0 ? void 0 : userConfig.topTagsOn, true),
-        };
-        var showDetails = !collapsed || pluginConfig.showWhenCollapsed;
-        if (showDetails) {
-            return [
-                React.createElement(React.Fragment, null,
-                    React.createElement(DetailGroup_1.default, null, children),
-                    React.createElement(DetailGroup_1.default, { id: "pde__entities", className: "performer-details-extended" },
-                        React.createElement(ItemAverageRating_1.default, { collapsed: collapsed, configurationQueryResult: configurationQueryResult, performer: performer, scenesQueryResult: scenesQueryResult }),
-                        React.createElement(ItemAppearsMostWith_1.default, { collapsed: collapsed, performer: performer, pluginConfig: pluginConfig, scenesQueryResult: scenesQueryResult }),
-                        React.createElement(ItemTopStudio_1.default, { allStudiosQueryResult: allStudiosQueryResult, collapsed: collapsed, performer: performer, pluginConfig: pluginConfig, scenesQueryResult: scenesQueryResult }),
-                        React.createElement(ItemTopTags_1.default, { collapsed: collapsed, performer: performer, pluginConfig: pluginConfig, scenesQueryResult: scenesQueryResult })),
-                    React.createElement(DetailGroup_1.default, { id: "pde__numbers", className: "performer-details-extended" },
-                        React.createElement(ItemTotalContent_1.default, { collapsed: collapsed, scenesQueryResult: scenesQueryResult }),
-                        React.createElement(ItemTotalPlayDuration_1.default, { collapsed: collapsed, scenesQueryResult: scenesQueryResult }),
-                        React.createElement(ItemScenesTimespan_1.default, { collapsed: collapsed, scenesQueryResult: scenesQueryResult }),
-                        React.createElement(ItemScenesOrganized_1.default, { collapsed: collapsed, scenesQueryResult: scenesQueryResult }),
-                        React.createElement(ItemOCount_1.default, { collapsed: collapsed, scenesQueryResult: scenesQueryResult, statsQueryResult: statsQueryResult }))),
-            ];
-        }
-    }
-    return [React.createElement("div", { className: "detail-group" }, children)];
-});
-/** Returns the given property from the user's config, or the default value if
- * the user hasn't explicitly set it. */
-function getConfigProp(value, defaultValue) {
-    return typeof value !== "undefined" ? value : defaultValue;
-}
-
+eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar DetailGroup_1 = __importDefault(__webpack_require__(/*! ./components/DetailGroup */ \"./src/components/DetailGroup.tsx\"));\nvar ItemAverageRating_1 = __importDefault(__webpack_require__(/*! ./components/ItemAverageRating */ \"./src/components/ItemAverageRating.tsx\"));\nvar ItemAppearsMostWith_1 = __importDefault(__webpack_require__(/*! ./components/ItemAppearsMostWith */ \"./src/components/ItemAppearsMostWith.tsx\"));\nvar ItemOCount_1 = __importDefault(__webpack_require__(/*! ./components/ItemOCount */ \"./src/components/ItemOCount.tsx\"));\nvar ItemScenesOrganized_1 = __importDefault(__webpack_require__(/*! ./components/ItemScenesOrganized */ \"./src/components/ItemScenesOrganized.tsx\"));\nvar ItemScenesTimespan_1 = __importDefault(__webpack_require__(/*! ./components/ItemScenesTimespan */ \"./src/components/ItemScenesTimespan.tsx\"));\nvar ItemTopStudio_1 = __importDefault(__webpack_require__(/*! ./components/ItemTopStudio */ \"./src/components/ItemTopStudio.tsx\"));\nvar ItemTopTags_1 = __importDefault(__webpack_require__(/*! ./components/ItemTopTags */ \"./src/components/ItemTopTags.tsx\"));\nvar ItemTotalContent_1 = __importDefault(__webpack_require__(/*! ./components/ItemTotalContent */ \"./src/components/ItemTotalContent.tsx\"));\nvar ItemTotalPlayDuration_1 = __importDefault(__webpack_require__(/*! ./components/ItemTotalPlayDuration */ \"./src/components/ItemTotalPlayDuration.tsx\"));\nvar classnames_1 = __importDefault(__webpack_require__(/*! classnames */ \"./node_modules/classnames/index.js\"));\n__webpack_require__(/*! ./styles.scss */ \"./src/styles.scss\");\nvar PluginApi = window.PluginApi;\nvar GQL = PluginApi.GQL, React = PluginApi.React;\n/* -------------------------------------------------------------------------- */\n/*                               PluginApi patch                              */\n/* -------------------------------------------------------------------------- */\nPluginApi.patch.after(\"PerformerDetailsPanel.DetailGroup\", function (_a) {\n    var children = _a.children, collapsed = _a.collapsed, performer = _a.performer;\n    var performerID = performer.id;\n    var qScenes = GQL.useFindScenesQuery({\n        variables: {\n            filter: { per_page: -1, sort: \"date\" },\n            scene_filter: {\n                performers: {\n                    modifier: \"INCLUDES\" /* CriterionModifier.Includes */,\n                    value: [performerID],\n                },\n            },\n        },\n    });\n    var qAllTags = GQL.useFindTagsQuery({\n        variables: {\n            filter: { per_page: -1, sort: \"id\" },\n        },\n    });\n    var qStudios = GQL.useFindStudiosQuery({\n        variables: {\n            filter: { per_page: -1, sort: \"id\" },\n            studio_filter: {\n                scenes_filter: {\n                    performers: {\n                        modifier: \"INCLUDES\" /* CriterionModifier.Includes */,\n                        value: [performerID],\n                    },\n                },\n            },\n        },\n    });\n    var qConfig = GQL.useConfigurationQuery();\n    var qStats = GQL.useStatsQuery();\n    /**\n     * Only display the plugin data if:\n     * * The required data has been loaded.\n     * * AND The performer details section is NOT collapsed\n     * * UNLESS the user has set to override this behaviour.\n     */\n    var dataLoaded = !!qScenes.data &&\n        qScenes.data.findScenes.scenes.length &&\n        !!qAllTags.data &&\n        !!qConfig.data &&\n        !!qStats.data &&\n        !!qStudios.data &&\n        performerID !== null;\n    if (dataLoaded) {\n        var configurationQueryResult = qConfig.data\n            .configuration;\n        var scenesQueryResult = qScenes.data.findScenes;\n        var allTagsQueryResult = qAllTags.data.findTags;\n        var statsQueryResult = qStats.data.stats;\n        var studiosQueryResult = qStudios.data.findStudios;\n        var _b = configurationQueryResult.ui, compactExpandedDetails = _b.compactExpandedDetails, showAllDetails = _b.showAllDetails;\n        var userConfig = configurationQueryResult.plugins.PerformerDetailsExtended;\n        // Compile the user's config with config defaults\n        var pluginConfig = {\n            additionalStyling: getConfigProp(userConfig === null || userConfig === void 0 ? void 0 : userConfig.additionalStyling, false),\n            appearsMostWithGendered: getConfigProp(userConfig === null || userConfig === void 0 ? void 0 : userConfig.appearsMostWithGendered, true),\n            maximumTops: getConfigProp(userConfig === null || userConfig === void 0 ? void 0 : userConfig.maximumTops, 3),\n            minimumAppearances: getConfigProp(userConfig === null || userConfig === void 0 ? void 0 : userConfig.minimumAppearances, 2),\n            showWhenCollapsed: getConfigProp(userConfig === null || userConfig === void 0 ? void 0 : userConfig.showWhenCollapsed, showAllDetails || false),\n            topNetworkOn: getConfigProp(userConfig === null || userConfig === void 0 ? void 0 : userConfig.topNetworkOn, true),\n            topTagsBlacklist: getConfigProp(userConfig === null || userConfig === void 0 ? void 0 : userConfig.topTagsBlacklist, \"\"),\n            topTagsBlacklistChildren: getConfigProp(userConfig === null || userConfig === void 0 ? void 0 : userConfig.topTagsBlacklistChildren, false),\n            // For topTagsCount, set to 3 if the value is undefined or 0.\n            topTagsCount: (userConfig === null || userConfig === void 0 ? void 0 : userConfig.topTagsCount) || 3,\n            topTagsOn: getConfigProp(userConfig === null || userConfig === void 0 ? void 0 : userConfig.topTagsOn, true),\n        };\n        /** Display as collapsed if currently collapsed, or compacr details is\n         * `true` in the native config. */\n        var isCollapsed = collapsed || !!compactExpandedDetails;\n        var showDetails = !collapsed || pluginConfig.showWhenCollapsed;\n        if (showDetails) {\n            return [\n                React.createElement(React.Fragment, null,\n                    React.createElement(DetailGroup_1.default, { className: (0, classnames_1.default)({\n                            \"detail-group-pde-themed\": pluginConfig.additionalStyling,\n                        }) }, children),\n                    React.createElement(DetailGroup_1.default, { id: \"performerDetailsExtended\", className: (0, classnames_1.default)(\"performer-details-extended\", {\n                            \"detail-group-pde-themed\": pluginConfig.additionalStyling,\n                        }) },\n                        React.createElement(ItemAverageRating_1.default, { collapsed: isCollapsed, configurationQueryResult: configurationQueryResult, performer: performer, scenesQueryResult: scenesQueryResult }),\n                        React.createElement(ItemAppearsMostWith_1.default, { collapsed: isCollapsed, performer: performer, pluginConfig: pluginConfig, scenesQueryResult: scenesQueryResult }),\n                        React.createElement(ItemTopStudio_1.default, { collapsed: isCollapsed, performer: performer, pluginConfig: pluginConfig, scenesQueryResult: scenesQueryResult, studiosQueryResult: studiosQueryResult }),\n                        React.createElement(ItemTotalContent_1.default, { collapsed: isCollapsed, scenesQueryResult: scenesQueryResult }),\n                        React.createElement(ItemTotalPlayDuration_1.default, { collapsed: isCollapsed, scenesQueryResult: scenesQueryResult }),\n                        React.createElement(ItemScenesTimespan_1.default, { collapsed: isCollapsed, scenesQueryResult: scenesQueryResult }),\n                        React.createElement(ItemScenesOrganized_1.default, { collapsed: isCollapsed, scenesQueryResult: scenesQueryResult }),\n                        React.createElement(ItemOCount_1.default, { collapsed: isCollapsed, scenesQueryResult: scenesQueryResult, statsQueryResult: statsQueryResult }),\n                        React.createElement(ItemTopTags_1.default, { collapsed: collapsed, performer: performer, pluginConfig: pluginConfig, scenesQueryResult: scenesQueryResult, allTagsQueryResult: allTagsQueryResult }))),\n            ];\n        }\n    }\n    return [React.createElement(\"div\", { className: \"detail-group\" }, children)];\n});\n/** Returns the given property from the user's config, or the default value if\n * the user hasn't explicitly set it. */\nfunction getConfigProp(value, defaultValue) {\n    return typeof value !== \"undefined\" ? value : defaultValue;\n}\n\n\n//# sourceURL=webpack://performer-details-extended/./src/main.tsx?");
 
 /***/ }),
 
-/***/ 942:
+/***/ "./node_modules/classnames/index.js":
+/*!******************************************!*\
+  !*** ./node_modules/classnames/index.js ***!
+  \******************************************/
 /***/ ((module, exports) => {
 
-var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
-	Copyright (c) 2018 Jed Watson.
-	Licensed under the MIT License (MIT), see
-	http://jedwatson.github.io/classnames
-*/
-/* global define */
-
-(function () {
-	'use strict';
-
-	var hasOwn = {}.hasOwnProperty;
-
-	function classNames () {
-		var classes = '';
-
-		for (var i = 0; i < arguments.length; i++) {
-			var arg = arguments[i];
-			if (arg) {
-				classes = appendClass(classes, parseValue(arg));
-			}
-		}
-
-		return classes;
-	}
-
-	function parseValue (arg) {
-		if (typeof arg === 'string' || typeof arg === 'number') {
-			return arg;
-		}
-
-		if (typeof arg !== 'object') {
-			return '';
-		}
-
-		if (Array.isArray(arg)) {
-			return classNames.apply(null, arg);
-		}
-
-		if (arg.toString !== Object.prototype.toString && !arg.toString.toString().includes('[native code]')) {
-			return arg.toString();
-		}
-
-		var classes = '';
-
-		for (var key in arg) {
-			if (hasOwn.call(arg, key) && arg[key]) {
-				classes = appendClass(classes, key);
-			}
-		}
-
-		return classes;
-	}
-
-	function appendClass (value, newClass) {
-		if (!newClass) {
-			return value;
-		}
-	
-		if (value) {
-			return value + ' ' + newClass;
-		}
-	
-		return value + newClass;
-	}
-
-	if ( true && module.exports) {
-		classNames.default = classNames;
-		module.exports = classNames;
-	} else if (true) {
-		// register as 'classnames', consistent with npm package name
-		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = (function () {
-			return classNames;
-		}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
-		__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	} else {}
-}());
-
+eval("var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!\n\tCopyright (c) 2018 Jed Watson.\n\tLicensed under the MIT License (MIT), see\n\thttp://jedwatson.github.io/classnames\n*/\n/* global define */\n\n(function () {\n\t'use strict';\n\n\tvar hasOwn = {}.hasOwnProperty;\n\n\tfunction classNames () {\n\t\tvar classes = '';\n\n\t\tfor (var i = 0; i < arguments.length; i++) {\n\t\t\tvar arg = arguments[i];\n\t\t\tif (arg) {\n\t\t\t\tclasses = appendClass(classes, parseValue(arg));\n\t\t\t}\n\t\t}\n\n\t\treturn classes;\n\t}\n\n\tfunction parseValue (arg) {\n\t\tif (typeof arg === 'string' || typeof arg === 'number') {\n\t\t\treturn arg;\n\t\t}\n\n\t\tif (typeof arg !== 'object') {\n\t\t\treturn '';\n\t\t}\n\n\t\tif (Array.isArray(arg)) {\n\t\t\treturn classNames.apply(null, arg);\n\t\t}\n\n\t\tif (arg.toString !== Object.prototype.toString && !arg.toString.toString().includes('[native code]')) {\n\t\t\treturn arg.toString();\n\t\t}\n\n\t\tvar classes = '';\n\n\t\tfor (var key in arg) {\n\t\t\tif (hasOwn.call(arg, key) && arg[key]) {\n\t\t\t\tclasses = appendClass(classes, key);\n\t\t\t}\n\t\t}\n\n\t\treturn classes;\n\t}\n\n\tfunction appendClass (value, newClass) {\n\t\tif (!newClass) {\n\t\t\treturn value;\n\t\t}\n\t\n\t\tif (value) {\n\t\t\treturn value + ' ' + newClass;\n\t\t}\n\t\n\t\treturn value + newClass;\n\t}\n\n\tif ( true && module.exports) {\n\t\tclassNames.default = classNames;\n\t\tmodule.exports = classNames;\n\t} else if (true) {\n\t\t// register as 'classnames', consistent with npm package name\n\t\t!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = (function () {\n\t\t\treturn classNames;\n\t\t}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),\n\t\t__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));\n\t} else {}\n}());\n\n\n//# sourceURL=webpack://performer-details-extended/./node_modules/classnames/index.js?");
 
 /***/ })
 
@@ -1036,7 +249,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module is referenced by other modules so it can't be inlined
-/******/ 	var __webpack_exports__ = __webpack_require__(221);
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/main.tsx");
 /******/ 	
 /******/ })()
 ;

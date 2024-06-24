@@ -1,23 +1,27 @@
 name: Performer Details Extended
 description: Displays metadata about frequent scene partners, most prominent tags, etc. in your library, on performer pages.
 url: https://github.com/Valkyr-JS/performer-details-extended
-version: 0.3.0
+version: 0.4.0
 ui:
   javascript:
     - PerformerDetailsExtended.js
   css:
     - PerformerDetailsExtended.css
 settings:
+  additionalStyling:
+    displayName: Enable recommended styling
+    description: By default the plugin adds the minimum amount of styling in order to blend with the native Stash interface, as well as to be compatible with theme plugins. When enabled, these additional styles improve the layout of the performer details panel as a whole, though it may be incompatible with theme plugins.
+    type: BOOLEAN
   appearsMostWithGendered:
-    displayName: '"Appears Most With" by gender'
+    displayName: Split "Appears Most With" by gender
     description: Show an "Appears Most With" metadata item for each gender that the performer has worked with. If false, only one item showing the performer they work with most overall will be displayed.
     type: BOOLEAN
   maximumTops:
-    displayName: Top appearances before overflow listed
+    displayName: Number of top appearances before overflowing
     description: The maximum number of results that are displayed as a performer's top studios/networks/partners before they overflow to a hover popover. The default value is 3.
     type: NUMBER
   minimumAppearances:
-    displayName: Minimum appearances required
+    displayName: Minimum number of appearances
     description: The minimum number of appearances a performer needs to have had with a partner/studio/network in order to show the data. The default value is 2.
     type: NUMBER
   showWhenCollapsed:
@@ -27,6 +31,14 @@ settings:
   topNetworkOn:
     displayName: Show "Top Network" item
     description: Toggle displaying the "Top Network" item on or off. Default is on.
+    type: BOOLEAN
+  topTagsBlacklist:
+    displayName: '"Top Tags" blacklist'
+    description: A comma-separated list of tag names that should be blacklisted from the "Top Tags" item. For example — blowjob, missionary, girl/boy.
+    type: STRING
+  topTagsBlacklistChildren:
+    displayName: 'Include child tags in "Top Tags" blacklist'
+    description: Child tags of those in the blacklist will also be removed from the "Top Tags" blacklist.
     type: BOOLEAN
   topTagsCount:
     displayName: Number of top tags
