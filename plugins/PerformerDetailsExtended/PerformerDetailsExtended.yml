@@ -1,7 +1,7 @@
 name: Performer Details Extended
 description: Displays metadata about frequent scene partners, most prominent tags, etc. in your library, on performer pages.
-url: https://github.com/Valkyr-JS/performer-details-extended
-version: 0.4.0
+url: https://github.com/Valkyr-JS/PerformerDetailsExtended
+version: 0.5.0
 ui:
   javascript:
     - PerformerDetailsExtended.js
@@ -11,6 +11,14 @@ settings:
   additionalStyling:
     displayName: Enable recommended styling
     description: By default the plugin adds the minimum amount of styling in order to blend with the native Stash interface, as well as to be compatible with theme plugins. When enabled, these additional styles improve the layout of the performer details panel as a whole, though it may be incompatible with theme plugins.
+    type: BOOLEAN
+  appearsMostWithTagsBlacklist:
+    displayName: '"Appears Most With" tags blacklist'
+    description: A comma-separated list of tag names that should be blacklisted from the "Appears Most With" item. For example — compilations, pmv, remastered.
+    type: STRING
+  appearsMostWithTagsBlacklistChildren:
+    displayName: 'Include child tags in "Appears Most With" tags blacklist'
+    description: When enabled, child tags of those in the blacklist will also be removed from the "Appears Most With" blacklist.
     type: BOOLEAN
   appearsMostWithGendered:
     displayName: Split "Appears Most With" by gender
@@ -24,6 +32,10 @@ settings:
     displayName: Minimum number of appearances
     description: The minimum number of appearances a performer needs to have had with a partner/studio/network in order to show the data. The default value is 2.
     type: NUMBER
+  scenesTimespanReverse:
+    displayName: Reverse Scenes Timespan
+    description: When enabled, the Scenes Timespan will display as "newest scene - oldest scene", instead of the default "oldest scene - newest scene".
+    type: BOOLEAN
   showWhenCollapsed:
     displayName: Show when collapsed
     description: When enabled, the plugin data will always be displayed, irrelevant of whether the performer details panel is collapsed or not. If disabled, it will follow the same settings as Interface > Detail Page > Show all details.
@@ -38,7 +50,7 @@ settings:
     type: STRING
   topTagsBlacklistChildren:
     displayName: 'Include child tags in "Top Tags" blacklist'
-    description: Child tags of those in the blacklist will also be removed from the "Top Tags" blacklist.
+    description: When enabled, child tags of those in the blacklist will also be removed from the "Top Tags" blacklist.
     type: BOOLEAN
   topTagsCount:
     displayName: Number of top tags
@@ -47,4 +59,8 @@ settings:
   topTagsOn:
     displayName: Show "Top Tags" item
     description: When enabled, the "Top Tags" item will be displayed. Default is on.
+    type: BOOLEAN
+  totalPlayCountOn:
+    displayName: Show "Total Play Count" item
+    description: When enabled, the "Total Play Count" item will be displayed. Also, the "Total Play Duration" item will show the performer's playtime as a percentage total library playtime, instead of total performer play count. Default is off.
     type: BOOLEAN

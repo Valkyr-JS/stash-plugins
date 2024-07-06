@@ -89,7 +89,7 @@
   .full-width .detail-group-pde-themed .detail-item {
     width: auto;
   }
-  .full-width .detail-group-pde-themed .detail-item.piercings, .full-width .detail-group-pde-themed .detail-item.stash_ids, .full-width .detail-group-pde-themed .detail-item.tags, .full-width .detail-group-pde-themed .detail-item.tattoos, .full-width .detail-group-pde-themed .detail-item.top-tags {
+  .full-width .detail-group-pde-themed .detail-item.details, .full-width .detail-group-pde-themed .detail-item.piercings, .full-width .detail-group-pde-themed .detail-item.stash_ids, .full-width .detail-group-pde-themed .detail-item.tags, .full-width .detail-group-pde-themed .detail-item.tattoos, .full-width .detail-group-pde-themed .detail-item.top-tags {
     grid-column: 1/-1;
   }
   .full-width .detail-group-pde-themed .detail-item.stash_ids ul {
