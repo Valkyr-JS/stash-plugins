@@ -10,9 +10,6 @@
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
-.vsc-card-description__title-link {
-  display: inline-block;
-}
 .vsc-card-description__small-bar {
   display: flex;
   align-items: start;
@@ -109,6 +106,19 @@
 }
 .vsc-performer-list__performer-hover {
   padding: 5px;
+}
+
+.vsc-performer-list__gender-color--male {
+  color: #89cff0 !important;
+}
+.vsc-performer-list__gender-color--female {
+  color: #f38cac !important;
+}
+.vsc-performer-list__gender-color--transgender_male, .vsc-performer-list__gender-color--transgender_female, .vsc-performer-list__gender-color--intersex, .vsc-performer-list__gender-color--non_binary {
+  color: #c8a2c8 !important;
+}
+.vsc-performer-list__gender-color--unknown {
+  color: white !important;
 }
 /*!**********************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles.scss ***!

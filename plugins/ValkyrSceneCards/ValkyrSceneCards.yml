@@ -1,16 +1,20 @@
 name: Valkyr Scene Cards
 description: A rework of the scene cards for Stash.
 url: https://github.com/Valkyr-JS/ValkyrSceneCards
-version: 0.1.0
+version: 0.2.0
 ui:
   javascript:
     - ValkyrSceneCards.js
   css:
     - ValkyrSceneCards.css
 settings:
+  descriptionHidden:
+    displayName: Hide the description
+    description: When enabled, the description will be removed from scene cards.
+    type: BOOLEAN
   performerAvatarsActive:
     displayName: Use performer avatars
-    description: When enabled, the text list of performers is replaced with circular avatar images of each performer. These can be customised below.
+    description: When enabled, the text list of performers is replaced with circular avatar images of each performer. These can be customized below.
     type: BOOLEAN
   performerAvatarsProfile:
     displayName: Use profile images as default avatars
@@ -24,3 +28,7 @@ settings:
     displayName: Custom avatar image tag ID
     description: Set the ID of the tag given to custom avatar images. Custom avatars will take precedence over other types of avatars.
     type: STRING
+  performerTextColors:
+    displayName: Performer colors
+    description: When enabled, performer names will be colored according to their gender.
+    type: BOOLEAN
