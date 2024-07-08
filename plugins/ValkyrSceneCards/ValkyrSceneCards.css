@@ -1,0 +1,137 @@
+/*!**********************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/CardDescription/CardDescription.scss ***!
+  \**********************************************************************************************************************************************/
+.vsc-card-description__details {
+  flex-grow: 1;
+}
+.vsc-card-description__details-inner {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.vsc-card-description__title-link {
+  display: inline-block;
+}
+.vsc-card-description__small-bar {
+  display: flex;
+  align-items: start;
+  margin-bottom: 3px;
+  font-size: 13px;
+  line-height: 1;
+}
+.vsc-card-description__studio {
+  line-height: 1.2;
+}
+.vsc-card-description__file-data {
+  align-items: center;
+  margin-left: auto;
+  opacity: 0.65;
+}
+.vsc-card-description__resolution {
+  display: inline;
+  padding: 1px 4px;
+  background-color: #f5f8fa;
+  color: #30404d;
+  font-weight: 900;
+  user-select: none;
+  margin-left: 8px;
+}
+.vsc-card-description__resolution-hover {
+  padding: 5px;
+}
+.vsc-card-description__organized .fa-icon {
+  margin-right: 0;
+  margin-left: 8px;
+}
+.vsc-card-description__foot {
+  display: flex;
+  margin-bottom: 10px;
+}
+.vsc-card-description__date {
+  margin-right: auto;
+}
+.vsc-card-description__rating svg {
+  margin-right: 0;
+}
+/*!******************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/PerformerList/PerformerList.scss ***!
+  \******************************************************************************************************************************************/
+.vsc-performer-list {
+  margin: 10px 0;
+}
+.vsc-performer-list__avatar-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 10px;
+}
+.vsc-performer-list__avatar {
+  display: inline-block;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 2px 0 0 0 rgba(0, 0, 0, 0.45);
+  margin-left: -10px;
+}
+.vsc-performer-list__avatar a {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.vsc-performer-list__avatar--profile a {
+  align-items: start;
+}
+.vsc-performer-list__avatar img {
+  width: 100%;
+}
+.vsc-performer-list__avatar span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 700;
+  background-color: #202b33;
+  height: 100%;
+  width: 100%;
+}
+.vsc-performer-list__avatar svg {
+  position: absolute;
+  margin: 0;
+  font-size: 36px;
+  opacity: 0.2;
+}
+.vsc-performer-list__avatar-list--large .vsc-performer-list__avatar {
+  height: 80px;
+  width: 80px;
+}
+.vsc-performer-list__performer-hover {
+  padding: 5px;
+}
+/*!**********************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles.scss ***!
+  \**********************************************************************************************************/
+.scene-card .scene-specs-overlay,
+.scene-card .rating-banner {
+  display: none !important;
+}
+.scene-card:hover .card-check {
+  opacity: 0;
+}
+.scene-card:has(.video-section.thumbnail-section:hover) .card-check {
+  opacity: 0.75;
+  transition: opacity 0.5s;
+}
+.scene-card .card-section {
+  height: 100%;
+}
+.scene-card .card-section > a:first-child {
+  display: none;
+}
+.scene-card__details {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
