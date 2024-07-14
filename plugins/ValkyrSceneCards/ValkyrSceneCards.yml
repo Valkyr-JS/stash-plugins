@@ -1,34 +1,114 @@
 name: Valkyr Scene Cards
-description: A rework of the scene cards for Stash.
+description: A rework of the scene card component for Stash.
 url: https://github.com/Valkyr-JS/ValkyrSceneCards
-version: 0.2.1
+version: 1.0.0
 ui:
   javascript:
     - ValkyrSceneCards.js
   css:
     - ValkyrSceneCards.css
 settings:
-  descriptionHidden:
-    displayName: Hide the description
-    description: When enabled, the description will be removed from scene cards.
+  descriptionMaxLines:
+    displayName: Description max line length
+    description: Set the maximum number of lines that a scene description can fill before being truncated. Default is 3.
+    type: NUMBER
+  durationPadding:
+    displayName: Pad duration timestamps
+    description: When enabled, the scene duration will be padded out to HH:MM:SS. For example, 6:37 would appear as 00:06:37.
     type: BOOLEAN
-  performerAvatarsActive:
-    displayName: Use performer avatars
-    description: When enabled, the text list of performers is replaced with circular avatar images of each performer. These can be customized below.
+  hideDate:
+    displayName: Hide date
+    description: When enabled, the scene date will not be displayed.
     type: BOOLEAN
-  performerAvatarsProfile:
-    displayName: Use profile images as default avatars
-    description: When enabled, the top section of the performer's profile image is used for their avatar. If disabled, or if no profile image is available, the performer's initials are used instead.
+  hideDescription:
+    displayName: Hide description
+    description: When enabled, the scene description will not be displayed.
     type: BOOLEAN
-  performerAvatarsSizeLarge:
-    displayName: Show large performer avatars
-    description: When enabled, all performer avatars will be displayed in a larger size than the default.
+  hideDirector:
+    displayName: Hide director
+    description: When enabled, the scene director will not be displayed.
     type: BOOLEAN
-  performerAvatarsTagID:
-    displayName: Custom avatar image tag ID
-    description: Set the ID of the tag given to custom avatar images. Custom avatars will take precedence over other types of avatars.
+  hideDuration:
+    displayName: Hide duration
+    description: When enabled, the scene duration will not be displayed.
+    type: BOOLEAN
+  hideGalleries:
+    displayName: Hide galleries
+    description: When enabled, the scene galleries count will not be displayed.
+    type: BOOLEAN
+  hideGroups:
+    displayName: Hide groups/movies
+    description: When enabled, the scene groups (movies in Stash 0.26 and older) count will not be displayed.
+    type: BOOLEAN
+  hideMarkers:
+    displayName: Hide markers
+    description: When enabled, the scene markers count will not be displayed.
+    type: BOOLEAN
+  hideOCount:
+    displayName: Hide O count
+    description: When enabled, the scene O count and icon will not be displayed.
+    type: BOOLEAN
+  hideOrganized:
+    displayName: Hide organized icon
+    description: When enabled, the organized icon will not be displayed for scenes marked as organized.
+    type: BOOLEAN
+  hideParentStudio:
+    displayName: Hide parent studio
+    description: When enabled, the parent studio will not be displayed.
+    type: BOOLEAN
+  hidePerformer:
+    displayName: Hide performers
+    description: When enabled, the list of performers will not be displayed.
+    type: BOOLEAN
+  hidePerformerHoverAge:
+    displayName: Hide performer age on hover
+    description: When enabled, the performer's age will not be displayed when hovering over their name or avatar.
+    type: BOOLEAN
+  hidePerformerHoverImage:
+    displayName: Hide performer image on hover
+    description: When enabled, the performer's image will not be displayed when hovering over their name or avatar.
+    type: BOOLEAN
+  hidePerformerHoverNationality:
+    displayName: Hide performer nationality on hover
+    description: When enabled, the performer's nationality will not be displayed when hovering over their name or avatar.
+    type: BOOLEAN
+  hidePlayCount:
+    displayName: Hide play count
+    description: When enabled, the scene play count and icon will not be displayed.
+    type: BOOLEAN
+  hideResolution:
+    displayName: Hide resolution
+    description: When enabled, the scene resolution will not be displayed.
+    type: BOOLEAN
+  hideTags:
+    displayName: Hide tags
+    description: When enabled, the scene tag count will not be displayed.
+    type: BOOLEAN
+  hideZeroValueData:
+    displayName: Hide zero-value data
+    description: When enabled, numerical data that has a value of 0 will not be displayed, irrespective of other settings.
+    type: BOOLEAN
+  parentStudioSeparator:
+    displayName: Studio / parent studio separator
+    description: Set the separator character that appears between the studio and parent studio. Leave this blank to wrap the parent studio in brackets.
     type: STRING
-  performerTextColors:
-    displayName: Performer colors
-    description: When enabled, performer names will be colored according to their gender.
+  performerAvatars:
+    displayName: Display the performer list as avatars
+    description: When enabled, the performer list will be rendered as a set of avatars rather than as a text list. By default these appear as the performer initials against a background image indicating their gender. These can be overriden with the "Set tag ID for custom performer images" and "Use performer profile images as avatars" options.
+    type: BOOLEAN
+  performerAvatarsCustomTag:
+    displayName: Set tag ID for custom performer avatars
+    description: When set, performer avatars will use images tagged with this tag ID. This option overrides default and profile picture avatars. "Display the performer list as avatars" must be set to true in order to use.
+    type: STRING
+  performerAvatarsProfile:
+    displayName: Use performer profile images as avatars
+    description: When enabled, performer avatars will use the performer's profile image. The avatar will display the topmost square of the profile image. "Display the performer list as avatars" must be set to true in order to use.
+    type: BOOLEAN
+  performerGenderColors:
+    displayName: Display performer names in gender colors
+    description: When enabled, performer names will be colored according to their gender. These colors can be changed via CSS variables. See the readme in the link for details.
+    type: BOOLEAN
+  resolutionIcon:
+    displayName: Display resolution as icon
+    description: When enabled, the scene resolution be displayed as an SD/HD/2K/4K/etc. icon. SD and HD icons can be hovered over to see the full resolution.
     type: BOOLEAN
