@@ -1,7 +1,7 @@
 name: Valkyr Scene Cards
 description: A rework of the scene card component for Stash.
 url: https://github.com/Valkyr-JS/ValkyrSceneCards
-version: 1.0.2
+version: 1.1.0
 ui:
   javascript:
     - ValkyrSceneCards.js
@@ -76,6 +76,10 @@ settings:
     displayName: Hide play count
     description: When enabled, the scene play count and icon will not be displayed.
     type: BOOLEAN
+  hideRating:
+    displayName: Hide rating
+    description: When enabled, the scene user rating will not be displayed.
+    type: BOOLEAN
   hideResolution:
     displayName: Hide resolution
     description: When enabled, the scene resolution will not be displayed.
@@ -107,6 +111,26 @@ settings:
   performerGenderColors:
     displayName: Display performer names in gender colors
     description: When enabled, performer names will be colored according to their gender. These colors can be changed via CSS variables. See the readme in the link for details.
+    type: BOOLEAN
+  previewBlurredBackground:
+    displayName: Enable image backgrounds for previews
+    description: When enabled, scene preview images and videos will show a blurred copy of the thumbnail where there is letterboxing. This typically only happens for portrait thumbnails.
+    type: BOOLEAN
+  previewSceneProgressDisabled:
+    displayName: Disable scene progress indicator
+    description: When enabled, the progress indicator for partially-watched scenes will be disabled.
+    type: BOOLEAN
+  previewScrubberDisabled:
+    displayName: Disable preview scrubber
+    description: When enabled, the video scrubber will be disabled on scene cards.
+    type: BOOLEAN
+  previewVideoDisabled:
+    displayName: Disable preview videos
+    description: When enabled, the video previews that play when hovering on a card will be disabled.
+    type: BOOLEAN
+  previewVideoHideCursor:
+    displayName: Hide cursor on preview hover
+    description: When enabled, the cursor will be hidden when hovering over the scene preview video.
     type: BOOLEAN
   resolutionIcon:
     displayName: Display resolution as icon
