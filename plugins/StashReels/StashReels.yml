@@ -1,0 +1,14 @@
+name: Stash Reels
+description: TikTok for Stash.
+url: https://github.com/Valkyr-JS/StashReels
+version: 0.1.0
+ui:
+  assets:
+    /: .
+  javascript:
+    - StashReels.js
+settings:
+  hideNavButton:
+    displayName: Hide navigation button
+    description: Hide the main navigation link to Stash Reels.
+    type: BOOLEAN
