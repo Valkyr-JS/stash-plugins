@@ -1,7 +1,7 @@
 name: Performer Details Extended
 description: Displays additional metadata on performer pages, such as their most regular scene partners, top studio, and total play duration. Requires Stash v0.27.0 or higher.
 url: https://github.com/Valkyr-JS/PerformerDetailsExtended
-version: 1.0.0
+version: 1.0.1
 ui:
   javascript:
     - PerformerDetailsExtended.js
@@ -32,10 +32,6 @@ settings:
     displayName: Minimum number of appearances
     description: The minimum number of appearances a performer needs to have had with a partner/studio/network in order to show the data. The default value is 2.
     type: NUMBER
-  nativeFakeTitsHeading:
-    displayName: Replace "Fake Tits" item heading
-    description: Replaces the "Fake Tits" heading in the native Stash interface with the provided text.
-    type: STRING
   scenesTimespanReverse:
     displayName: Reverse Scenes Timespan
     description: When enabled, the Scenes Timespan will display as "newest scene - oldest scene", instead of the default "oldest scene - newest scene".
