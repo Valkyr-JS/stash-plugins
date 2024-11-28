@@ -1,7 +1,7 @@
 name: Valkyr Scene Cards
-description: A rework of the scene card component for Stash.
+description: A customisable rework of the scene card component for Stash.
 url: https://github.com/Valkyr-JS/ValkyrSceneCards
-version: 1.1.1
+version: 1.2.0
 ui:
   javascript:
     - ValkyrSceneCards.js
@@ -31,6 +31,14 @@ settings:
   hideDuration:
     displayName: Hide duration
     description: When enabled, the scene duration will not be displayed.
+    type: BOOLEAN
+  hideFilesize:
+    displayName: Hide file size
+    description: When enabled, the file size will not be displayed.
+    type: BOOLEAN
+  hideFramerate:
+    displayName: Hide frame rate
+    description: When enabled, the frame rate will not be displayed.
     type: BOOLEAN
   hideGalleries:
     displayName: Hide galleries
@@ -112,6 +120,14 @@ settings:
     displayName: Display performer names in gender colors
     description: When enabled, performer names will be colored according to their gender. These colors can be changed via CSS variables. See the readme in the link for details.
     type: BOOLEAN
+  performerGenderFilter:
+    displayName: Filter performer gender
+    description: Enter a comma-separated list of the genders that should be included in the performer list. An empty list will show all performers. Acceptable values are; MALE, FEMALE, TRANSGENDER MALE, TRANSGENDER FEMALE, INTERSEX, and NON BINARY. Case is insensitive.
+    type: STRING
+  performerLimit:
+    displayName: Limit the number of performers
+    description: When set, if the number of scene performers exceeds this number, the remaining performers will be replaced with overflow text. If empty, all performers will be listed.
+    type: NUMBER
   previewBlurredBackground:
     displayName: Enable image backgrounds for previews
     description: When enabled, scene preview images and videos will show a blurred copy of the thumbnail where there is letterboxing. This typically only happens for portrait thumbnails.
