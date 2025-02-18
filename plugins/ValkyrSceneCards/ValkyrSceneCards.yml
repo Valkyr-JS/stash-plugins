@@ -1,7 +1,7 @@
 name: Valkyr Scene Cards
 description: A customisable rework of the scene card component for Stash.
 url: https://github.com/Valkyr-JS/ValkyrSceneCards
-version: 1.2.1
+version: 1.3.0
 ui:
   javascript:
     - ValkyrSceneCards.js
@@ -100,6 +100,10 @@ settings:
     displayName: Hide zero-value data
     description: When enabled, numerical data that has a value of 0 will not be displayed, irrespective of other settings.
     type: BOOLEAN
+  parentStudioFirst:
+    displayName: Parent studio before studio
+    description: When enabled, the parent studio appears before the studio.
+    type: BOOLEAN
   parentStudioSeparator:
     displayName: Studio / parent studio separator
     description: Set the separator character that appears between the studio and parent studio. Leave this blank to wrap the parent studio in brackets.
@@ -131,6 +135,10 @@ settings:
   previewBlurredBackground:
     displayName: Enable image backgrounds for previews
     description: When enabled, scene preview images and videos will show a blurred copy of the thumbnail where there is letterboxing. This typically only happens for portrait thumbnails.
+    type: BOOLEAN
+  previewContained:
+    displayName: Contain the thumbnail and preview to the available space
+    description: When enabled, the thumbnail image and preview video are contained to, and centered within, the space available, as opposed to filling it as per the default. This may cause letterboxing.
     type: BOOLEAN
   previewSceneProgressDisabled:
     displayName: Disable scene progress indicator
