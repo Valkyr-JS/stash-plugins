@@ -3,7 +3,7 @@ description: >-
   Allows setting an alternative image or video when hovering over performer
   cards in Stash.
 url: https://github.com/Valkyr-JS/hovercards#readme
-version: 0.1.0
+version: 0.2.0
 ui:
   assets:
     /: .
@@ -15,6 +15,12 @@ settings:
   preferFullVideos:
     displayName: Prefer full videos
     description: >-
-      By default, setting a Stash scene ID uses the scene preview. Enabling this
-      option uses the full video stream instead.
+      By default, setting a Stash scene ID uses the Stash-generated scene
+      preview. Enabling this option uses the full video stream instead.
+    type: BOOLEAN
+  preferOriginalImage:
+    displayName: Prefer original images
+    description: >-
+      By default, setting a Stash image ID uses the Stash-generated image
+      thumbnail. Enabling this option uses the original image instead.
     type: BOOLEAN
