@@ -3,7 +3,7 @@ description: >-
   Allows setting an alternative image or video when hovering over performer
   cards in Stash.
 url: https://github.com/Valkyr-JS/hovercards#readme
-version: 0.2.0
+version: 1.0.0
 ui:
   assets:
     /: .
