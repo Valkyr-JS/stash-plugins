@@ -1,7 +1,7 @@
 name: Valkyr Scene Cards
 description: A customisable rework of the scene card component for Stash.
 url: https://github.com/Valkyr-JS/ValkyrSceneCards
-version: 1.3.1
+version: 1.4.1
 ui:
   javascript:
     - ValkyrSceneCards.js
@@ -15,6 +15,10 @@ settings:
   durationPadding:
     displayName: Pad duration timestamps
     description: When enabled, the scene duration will be padded out to HH:MM:SS. For example, 6:37 would appear as 00:06:37.
+    type: BOOLEAN
+  hideAspectRatio:
+    displayName: Hide aspect ratio
+    description: When enabled, the scene aspect ratio will not be displayed.
     type: BOOLEAN
   hideDate:
     displayName: Hide date
@@ -156,7 +160,15 @@ settings:
     displayName: Hide cursor on preview hover
     description: When enabled, the cursor will be hidden when hovering over the scene preview video.
     type: BOOLEAN
+  ratingBanner:
+    displayName: Use rating banner
+    description: When enabled, the scene rating is displayed as a banner in the same way as the default Stash experience.
+    type: BOOLEAN
   resolutionIcon:
     displayName: Display resolution as icon
     description: When enabled, the scene resolution be displayed as an SD/HD/2K/4K/etc. icon. SD and HD icons can be hovered over to see the full resolution.
     type: BOOLEAN
+  tagBanners:
+    displayName: Tag banners
+    description: "Add customisable banners to display certain tags. Data must be structured in a JSON object - see the repository readme for more information."
+    type: STRING
