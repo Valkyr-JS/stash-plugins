@@ -1,9 +1,11 @@
 name: Stash Mergers
 description: A plugin for selectively merging data between performers in Stash.
-url: https://github.com/Valkyr-JS/StashMergers
-version: 1.0.2
+url: https://github.com/Valkyr-JS/StashMergers#readme
+version: 1.1.0
 ui:
-  css:
-    - StashMergers.css
+  assets:
+    /: .
   javascript:
-    - StashMergers.js
+    - stashmergers.js
+  css:
+    - stashmergers.css
