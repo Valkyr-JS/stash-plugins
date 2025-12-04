@@ -1,7 +1,7 @@
 name: Valkyr Scene Cards
 description: A customisable rework of the scene card component for Stash.
 url: https://github.com/Valkyr-JS/ValkyrSceneCards
-version: 1.4.1
+version: 1.5.0
 ui:
   javascript:
     - ValkyrSceneCards.js
@@ -18,7 +18,11 @@ settings:
     type: BOOLEAN
   hideAspectRatio:
     displayName: Hide aspect ratio
-    description: When enabled, the scene aspect ratio will not be displayed.
+    description: When enabled, the primary file's aspect ratio will not be displayed.
+    type: BOOLEAN
+  hideBitRate:
+    displayName: Hide bit rate
+    description: When enabled, the primary file's bit rate will not be displayed.
     type: BOOLEAN
   hideDate:
     displayName: Hide date
@@ -38,11 +42,11 @@ settings:
     type: BOOLEAN
   hideFilesize:
     displayName: Hide file size
-    description: When enabled, the file size will not be displayed.
+    description: When enabled, the primary file's size will not be displayed.
     type: BOOLEAN
   hideFramerate:
     displayName: Hide frame rate
-    description: When enabled, the frame rate will not be displayed.
+    description: When enabled, the primary file's frame rate will not be displayed.
     type: BOOLEAN
   hideGalleries:
     displayName: Hide galleries
@@ -94,11 +98,15 @@ settings:
     type: BOOLEAN
   hideResolution:
     displayName: Hide resolution
-    description: When enabled, the scene resolution will not be displayed.
+    description: When enabled, the primary file's resolution will not be displayed.
     type: BOOLEAN
   hideTags:
     displayName: Hide tags
     description: When enabled, the scene tag count will not be displayed.
+    type: BOOLEAN
+  hideVideoCodec:
+    displayName: Hide video codec
+    description: When enabled, the primary file's video codec will not be displayed.
     type: BOOLEAN
   hideZeroValueData:
     displayName: Hide zero-value data
@@ -167,6 +175,10 @@ settings:
   resolutionIcon:
     displayName: Display resolution as icon
     description: When enabled, the scene resolution be displayed as an SD/HD/2K/4K/etc. icon. SD and HD icons can be hovered over to see the full resolution.
+    type: BOOLEAN
+  studioLogoOnThumbnail:
+    displayName: Studio logo on thumbnail
+    description: "When enabled, the studio logo is added to the top right corner of the card thumbnail, the same way as the base Stash UI."
     type: BOOLEAN
   tagBanners:
     displayName: Tag banners
