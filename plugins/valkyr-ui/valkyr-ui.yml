@@ -1,0 +1,9 @@
+name: Valkyr UI
+description: A modular, customisable redesign of the Stash user interface.
+url: https://github.com/Valkyr-JS/valkyr-ui#readme
+version: 1.0.0
+ui:
+  javascript:
+    - valkyr-ui.js
+  css:
+    - valkyr-ui.css
