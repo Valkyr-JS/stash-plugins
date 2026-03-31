@@ -1,13 +1,12 @@
 #!/bin/bash
+# AGPLv3.0
+# https://github.com/stashapp/CommunityScripts/blob/main/LICENSE
 
-# This script has been specially modified to exclude the branch, in order to maintain backwards compatibility
-# feederbox826//2024-04-06
-
-# builds a repository of scrapers
+# builds a repository of plugins
 # outputs to _site with the following structure:
 # index.yml
-# <scraper_id>.zip
-# Each zip file contains the scraper.yml file and any other files in the same directory
+# <plugin_id>.zip
+# Each zip file contains the plugin.yml file and any other files in the same directory
 
 outdir="$1"
 if [ -z "$outdir" ]; then
@@ -20,12 +19,7 @@ mkdir -p "$outdir"
 buildPlugin() 
 {
     f=$1
-
-    if grep -q "^#pkgignore" "$f"; then
-        return
-    fi
-    
-    # get the scraper id from the directory
+    # get the plugin id from the directory
     dir=$(dirname "$f")
     plugin_id=$(basename "$f" .yml)
 
@@ -47,7 +41,6 @@ buildPlugin()
     description=$(grep "^description:" "$f" | head -n 1 | cut -d' ' -f2- | sed -e 's/\r//' -e 's/^"\(.*\)"$/\1/')
     ymlVersion=$(grep "^version:" "$f" | head -n 1 | cut -d' ' -f2- | sed -e 's/\r//' -e 's/^"\(.*\)"$/\1/')
     version="$ymlVersion-$version"
-    # set IFS
     IFS=$'\n' dep=$(grep "^# requires:" "$f" | cut -c 12- | sed -e 's/\r//')
 
     # write to spec index
